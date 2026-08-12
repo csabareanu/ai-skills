@@ -102,8 +102,11 @@ holds the code (branch, commits, working tree). A fresh session auto-loads
 `CLAUDE.md` for Claude Code), so `/implement` or `$implement` just continues from
 the first unchecked step - no separate save/load needed.
 
-Do NOT commit without permission or until Verify, or the fallback build and tests,
-passes. If a required check fails, fix the issue first.
+Do not create commits as an unannounced side effect during ordinary work. An
+explicit workflow command may include a commit after its required checks pass;
+`/complete` is that command in this Blueprint. If a required check fails, fix
+the issue first. Merge, push, deploy, publish, and destructive actions remain
+separate approvals unless the current workflow explicitly says otherwise.
 
 Autonomous execution is intentionally omitted from this fork. Keep human
 per-step review as the default and do not suggest an uninstalled autopilot
@@ -116,8 +119,11 @@ A new branch for every feature/fix. Name it **feature/[name]** or
 
 ## Commits
 
-- Ask before committing (don't auto-commit)
-- Use conventional commit messages (feat:, fix:, chore:, etc.)
+- Ordinary implementation work does not commit automatically. `/complete` makes
+  the one work-level commit as part of its explicit closeout workflow after the
+  required checks pass.
+- Follow the repository's established commit convention. If none exists, use a
+  simple conventional message such as `feat:`, `fix:`, or `chore:`.
 - Keep commits focused (one feature/fix per commit)
 - Never put "Generated with Claude" or any AI attribution in commit messages
 

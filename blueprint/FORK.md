@@ -18,7 +18,7 @@ The six general-purpose Codex skills installed outside this repository remain in
 
 ## Current curation
 
-Sixteen workflow skills are included. `autopilot`, `ci`, and `release` are deferred until the core loop has been used in a real project. The first planned behavior reviews are:
+Eighteen workflow skills are included. `autopilot`, `ci`, and `release` are deferred until the core loop has been used in a real project. The first planned behavior reviews are:
 
 1. Align `/complete` with the local rule that commits require explicit permission.
 2. Give `/prototype` a durable design brief and decision record so important UI choices survive beyond temporary HTML prototypes.

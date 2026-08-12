@@ -6,9 +6,9 @@ The source of truth for the fork is `blueprint/.agents/skills/`. The files under
 
 ## Included workflow
 
-The active set contains 16 skills:
+The active set contains 18 skills:
 
-- On-ramp and planning: `adopt`, `onboard`, `overview`, `brief`, `status`
+- On-ramp and planning: `adopt`, `onboard`, `project-plan`, `build-plan`, `overview`, `brief`, `status`
 - Build loop: `feature`, `fix`, `implement`, `check`, `tests`, `try`, `audit`, `complete`, `rollback`
 - Support: `doctor`, `prototype`
 

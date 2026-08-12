@@ -1,17 +1,17 @@
 ---
 name: onboard
-description: Set up the Blueprint after overlaying it onto a freshly scaffolded or early project. Detects the stack, tunes project files and adapters, documents real commands and existing checks, and leaves optional CI setup as a separate project-specific task. It tells the user what to fill in before /overview or $overview. Use when the user runs /onboard, invokes $onboard, just copied the Blueprint into a new project, or asks what to do after overlaying the Blueprint. For an existing app with meaningful shipped features, use adopt instead.
+description: Set up the Blueprint after overlaying it onto a freshly scaffolded or early project. Detects the stack, tunes project files and adapters, documents real commands and existing checks, and leaves optional CI setup as a separate project-specific task. It hands the user off to /project-plan, /build-plan, and then /overview. Use when the user runs /onboard, invokes $onboard, just copied the Blueprint into a new project, or asks what to do after overlaying the Blueprint. For an existing app with meaningful shipped features, use adopt instead.
 ---
 
 # onboard - finish the Blueprint overlay setup
 
 Where this sits in the workflow:
 
-    scaffold app  ->  overlay Blueprint  ->  [onboard]  ->  project-plan + build-plan  ->  /overview
+    scaffold app  ->  overlay Blueprint  ->  [onboard]  ->  /project-plan  ->  /build-plan  ->  /overview
     (user/tool)       (copied files)          (tune setup)   (user-owned inputs)       (generated context)
 
 `/onboard` is the fresh-project on-ramp. It assumes the app was scaffolded first
-and the Blueprint files were overlaid after. Run it before filling in plans or
+and the Blueprint files were overlaid after. Run it before generating plans or
 running `/overview`. Its job is to make the Blueprint fit the real project before
 planning starts: commands, project title, conventions, ignore rules, and tool
 adapters. It also asks whether the Blueprint workflow files should be committed
@@ -30,7 +30,8 @@ database, auth, or preferred tool, use it as a hint and verify against files.
 Inspect the repository and the two planning docs:
 
 - If `blueprint/project-plan.md` and `blueprint/build-plan.md` are mostly empty or
-  worksheet-like, proceed.
+  worksheet-like, proceed. Do not fill them here; `/project-plan` and
+  `/build-plan` create their contents with a review step.
 - If the app already has substantial shipped features, stop and recommend
   `/adopt` instead.
 - If the plans already contain real user-owned content, do not overwrite them.
@@ -211,20 +212,23 @@ Stop with a concise onboarding report:
 - verification command and GitHub checks status
 - adapter recommendation
 - TODOs or uncertainties
-- exact next files for the user to fill in:
-  - `blueprint/project-plan.md`
-  - `blueprint/build-plan.md`
+- planning-file readiness and whether either file already contains user-owned
+  content
+- exact next commands:
+  - `/project-plan` to define the product direction
+  - `/build-plan` to order the approved MVP into build slices
+  - `/overview` to generate the project context after both plans are approved
 
 End with the next command:
 
 ```text
-/overview
+/project-plan
 ```
 
 For Codex, also mention:
 
 ```text
-$overview
+$project-plan
 ```
 
 ## Rules

@@ -1,6 +1,6 @@
 ---
 name: overview
-description: "Validate and, when needed, normalize the two planning docs before generating blueprint/context/project-overview.md from blueprint/project-plan.md and blueprint/build-plan.md. The overview is the single AI-facing source of truth that project instructions load every session. Use when the user runs /overview, invokes $overview, has just finished writing or editing the plans, asks to shape rough plans into the Blueprint format, or asks to regenerate the project overview."
+description: "Validate and, when needed, normalize two substantive planning docs before generating blueprint/context/project-overview.md from blueprint/project-plan.md and blueprint/build-plan.md. Redirect missing or placeholder plans to /project-plan or /build-plan instead of inventing them. The overview is the single AI-facing source of truth that project instructions load every session. Use when the user runs /overview, invokes $overview, has just finished writing or editing the plans, asks to shape rough plans into the Blueprint format, or asks to regenerate the project overview."
 ---
 
 # overview - turn the two plans into the AI-facing source of truth
@@ -27,18 +27,17 @@ The two planning docs, already written:
   monetization, UI/UX, deployment
 - `blueprint/build-plan.md` - the ordered, one-line-per-feature build checklist
 
-If either is missing or still has placeholder text, stop and tell the user to
-fill it in first. This skill distills plans; it does not invent them.
+If `project-plan.md` is missing or still contains worksheet prompts, stop and
+hand off to `/project-plan`. If `build-plan.md` is missing or still contains
+placeholder content, stop and hand off to `/build-plan`. This skill distills
+substantive plans; it does not create their initial content.
 
-Placeholder text means the blueprint template's own scaffolding, not real
-content: checklist items like `Feature one` / `Feature two`, a trailing
-`- description`, `TODO`, `TBD`, or the template's example bullets left in place.
-Watch for the masking trap in particular: `build-plan.md` can still be the stub
-while `project-plan.md` §3 already lists the real features. When that happens the
-overview can be synthesized from `project-plan.md` alone and come out looking
-complete, hiding the empty checklist that `/feature` actually reads. A rich
-`project-plan.md` must not paper over a stub `build-plan.md` - reconcile the
-checklist first (Step 2) rather than generating over the gap.
+Placeholder content means the Blueprint template's scaffolding rather than real
+decisions: items such as `Feature one` / `Feature two`, a trailing
+`- description`, or the template's example bullets. Treat
+`> TODO (blocking): ...` as a hard stop. A generic `TODO` or `TBD` must be
+classified with the user when its impact is unclear. Preserve
+`> Open question: ...` when it does not prevent a coherent overview.
 
 ## Step 1 - read both plans
 
@@ -69,15 +68,10 @@ Flag these as plan-shape problems:
 - implementation chores instead of user-visible or system-visible outcomes
 - feature lists in `project-plan.md` that do not match `build-plan.md`
 
-**Stub build plan, real project plan (hard stop).** If `build-plan.md` is still
-the template stub or otherwise placeholder-only while `project-plan.md` §3 lists
-real features, do not generate the overview from `project-plan.md` alone. Derive
-the ordered checklist from `project-plan.md`'s feature list, show it, and on
-approval write it into `build-plan.md` before continuing. This is faithful, not
-invented scope - the features are already the user's, they were just never
-transcribed into the tracked checklist. The overview is generated from
-`build-plan.md`, so `build-plan.md` must hold the real feature checklist first;
-never leave it a stub sitting behind a complete-looking overview.
+**Stub build plan, real project plan (hard stop).** Do not synthesize an initial
+checklist from `project-plan.md` or generate an overview that masks the missing
+roadmap. Stop and tell the user to run `/build-plan`; that skill owns product
+interpretation, sequencing questions, and approval of the first roadmap.
 
 If the build plan is rough but understandable, propose a cleaned-up checkbox
 version and stop for user approval before editing the plan or generating the
@@ -106,10 +100,15 @@ copy:
   each, in build-plan order, so the AI knows what exists and what's next.
 - **Carry deployment constraints forward.** If the plan names Render, Vercel,
   build commands, env vars, health checks, or provider constraints, include them
-  in a short Deployment section. If deployment is unknown, mark it `> TODO`.
+  in a short Deployment section. If deployment is unknown and does not block the
+  current roadmap, mark it `> Open question: deployment target`.
 - **Stay faithful.** Don't add features, data, or stack choices that aren't in
-  the plans. If something is underspecified, leave a clearly marked `> TODO`
-  rather than inventing an answer.
+  the plans. If something is underspecified but non-blocking, leave a clearly
+  marked `> Open question: ...` rather than inventing an answer. Stop when the
+  missing decision prevents a coherent overview.
+- **Carry open questions.** Preserve non-blocking `> Open question: ...` entries
+  in a short Open questions section. Stop instead when an unresolved decision
+  blocks a coherent model, feature order, or constraint.
 
 Then stop. Report what you wrote and list any contradictions or gaps you found
 between the two plans, so the user can fix the plans and re-run.
@@ -127,11 +126,12 @@ not modify the main app code.
 - **Plans are user-owned.** Do not silently rewrite `project-plan.md` or
   `build-plan.md`. Propose normalized plan text and stop for approval unless the
   user explicitly asked you to clean up the plans.
-- **Build plan must be trackable.** Prefer a numbered checkbox list. If the build
-  plan is raw bullets, or still a stub while `project-plan.md` lists the features,
-  normalize it and write the reconciled checklist back into `build-plan.md` before
-  generating the overview. The real feature list must never live only in the
-  overview - `/feature` reads `build-plan.md`, not the overview.
+- **Build plan must be trackable.** Prefer a numbered checkbox list. If a
+  substantive plan uses rough bullets, propose a normalized checklist and write
+  it back only after approval. If it is missing or still a stub, hand off to
+  `/build-plan`; never create the initial roadmap here. The real feature list
+  must never live only in the overview because `/feature` reads
+  `build-plan.md`, not the overview.
 - **No new scope.** Everything in the overview must trace back to one of the two
   plans. Invented scope is the main failure mode here.
 - **Concrete over vague.** Field-level data models and named routes beat

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Build Plan"
+  short_description: "Turn product goals into build slices"
+  default_prompt: "Use $build-plan to turn the approved project plan into an ordered feature roadmap."
