@@ -20,4 +20,5 @@ The following upstream skills are intentionally deferred for now:
 
 The Claude adapter, npm installer, updater, and upstream remote are also intentionally omitted. To use this fork in another project, copy or link the selected skills into that project's `.agents/skills/` directory and keep the fork's state files under that project's `blueprint/` directory.
 
-See [`FORK.md`](FORK.md) for provenance and maintenance policy.
+See [`USAGE.md`](USAGE.md) for installation and project setup, and
+[`FORK.md`](FORK.md) for provenance and maintenance policy.

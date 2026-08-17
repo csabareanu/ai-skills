@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{LESSON_TITLE}}</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --background: #f7f4ed;
+      --surface: #fffdf8;
+      --text: #20231f;
+      --muted: #596158;
+      --accent: #285c4d;
+      --accent-strong: #173e34;
+      --focus: #b14e19;
+      --node-label: #ffffff;
+      --border: #c8c8bc;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --background: #171a18;
+        --surface: #222724;
+        --text: #eef1ec;
+        --muted: #bac3ba;
+        --accent: #83cbb4;
+        --accent-strong: #b1e4d3;
+        --focus: #ffae7a;
+        --node-label: #171a18;
+        --border: #4e5851;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    main {
+      width: min(72rem, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 2rem 0 4rem;
+    }
+
+    h1,
+    h2 {
+      line-height: 1.2;
+    }
+
+    .lede {
+      max-width: 70ch;
+      color: var(--muted);
+      font-size: 1.1rem;
+    }
+
+    .lesson-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.75fr);
+      gap: 1.25rem;
+      align-items: start;
+    }
+
+    .panel {
+      padding: 1.25rem;
+      border: 1px solid var(--border);
+      border-radius: 0.8rem;
+      background: var(--surface);
+    }
+
+    .visual {
+      width: 100%;
+      min-height: 18rem;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      background: var(--surface);
+    }
+
+    .controls {
+      display: grid;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    input[type="range"] {
+      width: 100%;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--focus);
+      outline-offset: 3px;
+    }
+
+    .task {
+      margin-top: 1.25rem;
+      border-left: 0.35rem solid var(--accent);
+    }
+
+    .checkpoint {
+      font-weight: 700;
+      color: var(--accent-strong);
+    }
+
+    details {
+      margin-top: 1rem;
+    }
+
+    footer {
+      margin-top: 2rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 48rem) {
+      .lesson-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <p>{{COURSE_TITLE}} · {{LESSON_POSITION}}</p>
+      <h1>{{LESSON_TITLE}}</h1>
+      <p class="lede">{{LEARNING_OBJECTIVE_AND_MOTIVATION}}</p>
+    </header>
+
+    <section aria-labelledby="model-title">
+      <h2 id="model-title">Mental model</h2>
+      <div class="lesson-grid">
+        <div class="panel">
+          {{THEORY_AND_EXPLANATION}}
+        </div>
+
+        <div class="panel">
+          <svg class="visual" viewBox="0 0 520 320" role="img" aria-labelledby="visual-title visual-description">
+            <title id="visual-title">{{VISUAL_TITLE}}</title>
+            <desc id="visual-description">{{VISUAL_TEXT_EQUIVALENT}}</desc>
+            <line id="relationship" x1="135" y1="160" x2="385" y2="160" stroke="currentColor" stroke-width="4" />
+            <circle cx="110" cy="160" r="52" fill="var(--accent)" />
+            <circle id="variable-node" cx="410" cy="160" r="52" fill="var(--focus)" />
+            <text x="110" y="166" text-anchor="middle" fill="var(--node-label)">{{NODE_A}}</text>
+            <text id="node-b-label" x="410" y="166" text-anchor="middle" fill="var(--node-label)">{{NODE_B}}</text>
+          </svg>
+
+          <div class="controls">
+            <label for="model-control">{{CONTROL_LABEL}}</label>
+            <input id="model-control" type="range" min="300" max="440" value="410" step="10">
+            <output id="model-value" for="model-control" aria-live="polite">410</output>
+          </div>
+
+          <p>{{INTERACTION_INSTRUCTION}}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel task" aria-labelledby="task-title">
+      <h2 id="task-title">Your task</h2>
+      <p>{{LEARNER_TASK}}</p>
+      <p class="checkpoint">{{CHECKPOINT_PROMPT}}</p>
+      <details>
+        <summary>Open only after submitting your attempt</summary>
+        <p>{{POST_ATTEMPT_FEEDBACK_OR_HINT}}</p>
+      </details>
+    </section>
+
+    <section aria-labelledby="text-equivalent-title">
+      <h2 id="text-equivalent-title">Text explanation</h2>
+      <p>{{TEXT_EQUIVALENT_AND_TAKEAWAY}}</p>
+    </section>
+
+    <footer>
+      <p>{{SOURCE_AND_LICENSE_NOTES}}</p>
+    </footer>
+  </main>
+
+  <script>
+    const control = document.querySelector("#model-control");
+    const node = document.querySelector("#variable-node");
+    const nodeLabel = document.querySelector("#node-b-label");
+    const relationship = document.querySelector("#relationship");
+    const output = document.querySelector("#model-value");
+
+    function updateModel() {
+      const position = Number(control.value);
+      node.setAttribute("cx", position);
+      nodeLabel.setAttribute("x", position);
+      relationship.setAttribute("x2", position - 25);
+      output.value = String(position);
+    }
+
+    control.addEventListener("input", updateModel);
+    updateModel();
+  </script>
+</body>
+</html>
