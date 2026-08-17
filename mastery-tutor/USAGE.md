@@ -8,7 +8,11 @@ The central rule is:
 
 > Symlink the skill. Keep learning state in the learning studio.
 
-## Install it in one project
+## Link it into an existing project
+
+Use this manual link flow when the project or learning studio already exists.
+For a brand-new studio, use the initializer in the next section so the studio
+state and optional skill link are created together.
 
 Set the source and target paths for the current shell:
 
@@ -29,6 +33,34 @@ Link the directory, not only `SKILL.md`. The skill also uses its `references/`,
 
 `ln -sT` refuses to replace an existing path. If `mastery-tutor` is already
 installed, inspect that path and decide which version the project should use.
+
+## Create a brand-new learning studio
+
+The initializer accepts a destination that does not exist, is empty, or
+contains only `.git`. It refuses every other existing destination and has no
+force or overwrite option.
+
+Preview the operation first:
+
+```bash
+python3 "$SKILL_SOURCE/scripts/init_learning_studio.py" \
+  --dry-run \
+  --link-skill \
+  "$PROJECT_ROOT"
+```
+
+Then create the studio and project-local skill link:
+
+```bash
+python3 "$SKILL_SOURCE/scripts/init_learning_studio.py" \
+  --link-skill \
+  "$PROJECT_ROOT"
+```
+
+Omit `--link-skill` when Mastery Tutor is already discovered globally or when
+you want to link or copy the skill separately. Do not create the manual symlink
+before running the initializer; `.agents/` would correctly make the destination
+non-empty.
 
 ## Verify discovery
 
@@ -75,7 +107,7 @@ $mastery-tutor Teach me one focused lesson on color temperature.
 Ask to track the lesson only when you want its evidence and next step preserved
 for future sessions.
 
-## Prepare the learning studio
+## Understand the learning studio
 
 For a sustained course, the target repository—not this skill—owns a structure
 like this:
@@ -104,11 +136,17 @@ using that template. If the repository is not yet a learning studio, ask
 durable state kept. It should confirm the location before creating studio or
 course files.
 
-The skill bundles a reusable syllabus source at
-`assets/course-template/syllabus.md`. When an older studio has no
-`courses/_template/syllabus.md`, Mastery Tutor can copy that file into the
-studio without replacing its other templates. The copied syllabus is project
-state; do not symlink it back into this skill.
+For manual initialization, copy `assets/studio-template/` into an empty target,
+copy `assets/course-template/syllabus.md` to
+`courses/_template/syllabus.md`, and create empty
+`courses/_template/lessons/` and `courses/_template/artifacts/` directories.
+The initializer performs these steps consistently and is preferred.
+
+When an older studio has no `courses/_template/syllabus.md`, Mastery Tutor can
+copy the canonical syllabus into that existing template without replacing its
+other files. This is a narrow compatibility repair, not a schema migration.
+Copied studio and syllabus files are project state; do not symlink them back
+into this skill.
 
 Keep a root `AGENTS.md` with any repository-specific privacy, tool, and working
 rules. Do not place learner history inside the symlinked `mastery-tutor`

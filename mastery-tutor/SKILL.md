@@ -24,12 +24,13 @@ Do this only in `tracked course` mode.
 1. Find the repository root containing `learner/` and `courses/`.
 2. Read the root `AGENTS.md`, `learner/profile.md`, and `courses/index.md`.
 3. For an existing course, read its `course.md`, `roadmap.md`, `syllabus.md` when present, `progress.md`, and `misconceptions.md` before teaching or planning.
-4. If no learning studio exists, ask where to keep durable state before creating it. Do not scatter course state across unrelated projects.
+4. If no learning studio exists, ask where to keep durable state. After the learner confirms a new or empty destination, read [studio bootstrap](references/studio-bootstrap.md), preview the initialization, and create the studio non-destructively. Do not scatter course state across unrelated projects.
 5. Treat the files as the durable memory. Do not claim to remember evidence that is absent from the conversation or state files.
 
 ## Route The Request
 
 - For a new course, diagnostic, or curriculum revision, read [course design and state](references/course-design-and-state.md) and [curriculum blueprint](references/curriculum-blueprint.md).
+- For initializing a new tracked learning studio, read [studio bootstrap](references/studio-bootstrap.md) and use `scripts/init_learning_studio.py`.
 - For lesson delivery, exercises, quizzes, labs, discussion, or mastery decisions, read [lesson and assessment](references/lesson-and-assessment.md).
 - For diagrams, interactive explanations, art comparisons, timelines, or simulations, read [visual lessons](references/visual-lessons.md) and reuse `assets/interactive-lesson-template.html` when appropriate.
 - For an `untracked lesson`, use a lightweight version of the same loop and skip studio discovery and state updates.

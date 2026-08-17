@@ -88,6 +88,8 @@ Use projects throughout a course when integration matters; do not reserve all ap
 
 Use durable state only for a tracked course.
 
+New studios include `learning-studio.yaml` with a structure schema version. Treat it as studio metadata, not learner evidence. Do not add, remove, or change a version marker in an existing studio without an explicit migration workflow.
+
 Keep shared memory in `learner/profile.md`. Store only lasting preferences, goals, demonstrated strengths, recurring needs, and cross-course prerequisite evidence.
 
 Keep each course under `courses/<course-slug>/`:
