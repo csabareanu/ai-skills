@@ -2,12 +2,25 @@
 
 ## Contents
 
-1. Intake and diagnostic
-2. Adaptive roadmap
-3. Concrete course blueprint
-4. Course shape and completion
-5. Durable state
-6. State update rules
+1. Operating mode boundary
+2. Intake and diagnostic
+3. Adaptive roadmap
+4. Concrete course blueprint
+5. Course shape and completion
+6. Durable state
+7. State update rules
+
+## Operating Mode Boundary
+
+Treat course design and course enrollment as separate decisions.
+
+- In `consultation`, design or audit the roadmap and blueprint without creating or updating learner or course state. Save a standalone proposal only when the learner explicitly asks for a file.
+- In `tracked course`, create and maintain durable state after the learner explicitly asks to start, enroll in, track, or resume the course.
+- In `untracked lesson`, teach without requiring a studio or preserving evidence after the session.
+
+Do not interpret a request to design, preview, compare, or audit a course as consent to enroll the learner or mutate an existing course.
+
+When consultation becomes a tracked course, copy the approved roadmap and blueprint into durable state rather than restarting the design process. Complete any unresolved diagnostic or verify any consequential assumption before Lesson 1, then revise only what the new evidence justifies.
 
 ## Intake And Diagnostic
 
@@ -47,7 +60,7 @@ Do not erase history when the roadmap changes. Record the reason in the roadmap'
 
 ## Concrete Course Blueprint
 
-Create `syllabus.md` after the initial roadmap. Keep the two artifacts distinct:
+For a tracked course, create `syllabus.md` after the initial roadmap. In consultation, use the same conceptual distinction without creating state files. Keep the two artifacts distinct:
 
 - `roadmap.md` records what must be mastered, why it depends on other capabilities, how mastery will be observed, and current status.
 - `syllabus.md` records the concrete teaching path: course arc, modules, lesson cards, source and example spine, practice, assessment architecture, independent workload, pacing, and integration milestones.
@@ -73,6 +86,8 @@ Use projects throughout a course when integration matters; do not reserve all ap
 
 ## Durable State
 
+Use durable state only for a tracked course.
+
 Keep shared memory in `learner/profile.md`. Store only lasting preferences, goals, demonstrated strengths, recurring needs, and cross-course prerequisite evidence.
 
 Keep each course under `courses/<course-slug>/`:
@@ -87,7 +102,7 @@ Keep each course under `courses/<course-slug>/`:
 - `assessments/`: assessment prompts, results, rubrics, and feedback
 - `artifacts/`: learner work or links to work retained elsewhere
 
-Create a course by copying the structure in `courses/_template/`. If that template lacks `syllabus.md`, copy `assets/course-template/syllabus.md` into it without overwriting any customized state. For an existing course that needs curriculum planning but has no syllabus, copy the studio's syllabus template into the course and reconcile it with the existing goal and roadmap. Register every course in `courses/index.md`. Use stable, lowercase, hyphenated slugs and never reuse a slug for a different goal.
+After the learner explicitly selects tracked mode, create a course by copying the structure in `courses/_template/`. If that template lacks `syllabus.md`, copy `assets/course-template/syllabus.md` into it without overwriting any customized state. For an existing course that needs curriculum planning but has no syllabus, copy the studio's syllabus template into the course and reconcile it with the existing goal and roadmap. Register every course in `courses/index.md`. Use stable, lowercase, hyphenated slugs and never reuse a slug for a different goal.
 
 ## State Update Rules
 

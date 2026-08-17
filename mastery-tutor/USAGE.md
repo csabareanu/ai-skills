@@ -49,17 +49,31 @@ $mastery-tutor Design a course that takes me from basic probability to being
 able to understand Bayesian inference. Start with a compact diagnostic.
 ```
 
+Design, preview, comparison, and audit requests use consultation mode by
+default. They do not create or update learner or course state. To turn an
+approved design into a durable course, ask explicitly:
+
+```text
+$mastery-tutor Start and track this course in the current learning studio.
+```
+
+Mastery Tutor should preserve the approved plan when enrolling. It may complete
+an unresolved diagnostic before Lesson 1 and adapt the plan from that evidence,
+but it should not redesign the course from scratch.
+
 ```text
 $mastery-tutor Resume my Laravel architecture course from the recorded next
 step and test whether I retained the previous concept.
 ```
 
-For a single lesson without progress tracking, say so explicitly:
+Single lessons and tutorials are untracked by default:
 
 ```text
-$mastery-tutor Teach me one focused lesson on color temperature. Do not create
-durable course state.
+$mastery-tutor Teach me one focused lesson on color temperature.
 ```
+
+Ask to track the lesson only when you want its evidence and next step preserved
+for future sessions.
 
 ## Prepare the learning studio
 
@@ -84,10 +98,11 @@ courses/
     artifacts/
 ```
 
-Each real course receives its own directory under `courses/<course-slug>/`
-using that template. If the repository is not yet a learning studio, invoke
-`$mastery-tutor` and tell it where you want durable state kept. It should ask
-before creating the studio and course files.
+Each tracked course receives its own directory under `courses/<course-slug>/`
+using that template. If the repository is not yet a learning studio, ask
+`$mastery-tutor` to start and track the course and tell it where you want
+durable state kept. It should confirm the location before creating studio or
+course files.
 
 The skill bundles a reusable syllabus source at
 `assets/course-template/syllabus.md`. When an older studio has no

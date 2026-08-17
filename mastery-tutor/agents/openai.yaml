@@ -1,4 +1,4 @@
 interface:
   display_name: "Mastery Tutor"
   short_description: "Adaptive courses with verified mastery"
-  default_prompt: "Use $mastery-tutor to design or resume an adaptive course and teach the next mastery-checked lesson."
+  default_prompt: "Use $mastery-tutor to preview an adaptive course without creating state, or explicitly start or resume a tracked course."
