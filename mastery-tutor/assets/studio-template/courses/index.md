@@ -15,7 +15,11 @@
 - `planned`: scoped but not started
 - `active`: currently progressing
 - `paused`: intentionally deferred with a recorded resume point
-- `completed`: completion criteria demonstrated
+- `completed-with-mastery`: learning path ended and completion criteria were demonstrated independently
+- `completed-with-gaps`: learning path ended with unresolved core capabilities recorded
 - `archived`: retained for reference without an active learning goal
 
-Keep one row per course. Never combine progress from courses merely because their subjects overlap.
+Keep one row per course. Finishing the planned path and demonstrating mastery are
+separate claims; never use an unqualified `completed` status. Archiving does not
+imply either kind of completion. Never combine progress from courses merely
+because their subjects overlap.

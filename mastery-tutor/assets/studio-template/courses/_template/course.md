@@ -5,6 +5,19 @@
 - Created: `[YYYY-MM-DD]`
 - Last updated: `[YYYY-MM-DD]`
 
+## Course Lifecycle
+
+- Enrolled: `[YYYY-MM-DD or not enrolled]`
+- Started: `[YYYY-MM-DD or not started]`
+- Completed: `[YYYY-MM-DD or not completed]`
+- Archived: `[YYYY-MM-DD or not archived]`
+
+Record every status change without rewriting earlier transitions.
+
+| Date | From | To | Evidence or reason |
+| --- | --- | --- | --- |
+| [YYYY-MM-DD] | [Previous status] | [New status] | [Evidence or reason] |
+
 ## Target Outcome
 
 Describe what the learner wants to understand, create, perform, or become able to do.
@@ -53,6 +66,18 @@ Separate self-reported experience from demonstrated evidence.
 ## Completion Evidence
 
 Define the capstone, portfolio, demonstration, oral defense, exam, or other final evidence.
+
+## Completion Record
+
+- Learning path completed: [yes or no]
+- Mastery outcome: [pending, demonstrated, or completed with gaps]
+- Remaining gaps: [Unresolved core capabilities, or none]
+- Follow-up: [Maintenance, remediation, next course, or none]
+
+Set `completed-with-mastery` only when the planned completion evidence was
+demonstrated under meaningful independent conditions. Set
+`completed-with-gaps` when the learning path has ended but core criteria remain
+unresolved. Do not infer completion from exposure, elapsed time, or archiving.
 
 ## Goal Change Log
 

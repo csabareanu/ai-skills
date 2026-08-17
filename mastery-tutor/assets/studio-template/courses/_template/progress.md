@@ -11,10 +11,15 @@ Last updated: `[YYYY-MM-DD]`
 
 ## Evidence Ledger
 
-| Concept ID | Status | Evidence | Conditions | Date |
-| --- | --- | --- | --- | --- |
+| Date | Capability ID | Task or artifact | Conditions and support | Observed evidence | Status | Uncertainty | Next retrieval |
+| --- | --- | --- | --- | --- | --- | --- | --- |
 
-Conditions should note meaningful support, allowed references, tools, collaboration, or time constraints.
+Record what the learner attempted separately from what the tutor observed and
+concluded. Conditions should name meaningful support, references, tools,
+collaboration, time, or retries. State uncertainty instead of silently filling
+evidence gaps. Use `not assessed`, `emerging`, `developing`, `demonstrated`, or
+`retained` for status. Give a date or evidence-trigger for the next retrieval;
+put its detailed purpose and task in the review queue.
 
 ## Completed Lessons And Activities
 
@@ -23,7 +28,7 @@ Conditions should note meaningful support, allowed references, tools, collaborat
 
 ## Review Queue
 
-| Concept ID | Review purpose | Due | Planned evidence |
+| Capability ID | Review purpose | Due or trigger | Planned evidence |
 | --- | --- | --- | --- |
 
 ## Open Questions

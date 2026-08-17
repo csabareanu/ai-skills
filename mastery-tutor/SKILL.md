@@ -22,15 +22,17 @@ Act as a rigorous, adaptive tutor. Build a visible path toward the learner's goa
 Do this only in `tracked course` mode.
 
 1. Find the repository root containing `learner/` and `courses/`.
-2. Read the root `AGENTS.md`, `learner/profile.md`, and `courses/index.md`.
-3. For an existing course, read its `course.md`, `roadmap.md`, `syllabus.md` when present, `progress.md`, and `misconceptions.md` before teaching or planning.
-4. If no learning studio exists, ask where to keep durable state. After the learner confirms a new or empty destination, read [studio bootstrap](references/studio-bootstrap.md), preview the initialization, and create the studio non-destructively. Do not scatter course state across unrelated projects.
-5. Treat the files as the durable memory. Do not claim to remember evidence that is absent from the conversation or state files.
+2. Read `learning-studio.yaml` when present, then the root `AGENTS.md`, `learner/profile.md`, and `courses/index.md`.
+3. If the marker is absent or older than the bundled schema, keep the studio read-only until the learner approves the explicit migration workflow in [studio migration](references/studio-migration.md). Refuse unsupported or newer schemas rather than guessing.
+4. For an existing course, read its `course.md`, `roadmap.md`, `syllabus.md` when present, `progress.md`, and `misconceptions.md` before teaching or planning.
+5. If no learning studio exists, ask where to keep durable state. After the learner confirms a new or empty destination, read [studio bootstrap](references/studio-bootstrap.md), preview the initialization, and create the studio non-destructively. Do not scatter course state across unrelated projects.
+6. Treat the files as the durable memory. Do not claim to remember evidence that is absent from the conversation or state files.
 
 ## Route The Request
 
 - For a new course, diagnostic, or curriculum revision, read [course design and state](references/course-design-and-state.md) and [curriculum blueprint](references/curriculum-blueprint.md).
 - For initializing a new tracked learning studio, read [studio bootstrap](references/studio-bootstrap.md) and use `scripts/init_learning_studio.py`.
+- For an existing unversioned or schema-1 studio, read [studio migration](references/studio-migration.md) and use `scripts/migrate_learning_studio.py`.
 - For lesson delivery, exercises, quizzes, labs, discussion, or mastery decisions, read [lesson and assessment](references/lesson-and-assessment.md).
 - For diagrams, interactive explanations, art comparisons, timelines, or simulations, read [visual lessons](references/visual-lessons.md) and reuse `assets/interactive-lesson-template.html` when appropriate.
 - For an `untracked lesson`, use a lightweight version of the same loop and skip studio discovery and state updates.
@@ -97,11 +99,13 @@ Only in `tracked course` mode, after a meaningful interaction:
 
 1. Update only the active course's state.
 2. Record observable evidence, unresolved misconceptions, adaptations, and the next useful step.
-3. Save a concise session note when the interaction materially changes understanding or the plan.
-4. Add assessment results and learner artifacts by reference; do not copy full conversations.
-5. Update `learner/profile.md` only for durable cross-course preferences, strengths, needs, or demonstrated prerequisite knowledge.
-6. Use evidence from another course to personalize teaching, but do not silently change that course's progress.
-7. When coverage or sequencing changes, update `roadmap.md` for capability dependencies and `syllabus.md` for the concrete teaching path; record why in their revision logs.
+3. In each evidence entry, separate the task or artifact, conditions and support, direct observation, status judgment, uncertainty, and next retrieval. Do not turn absence of evidence into a negative judgment.
+4. Save a concise session note when the interaction materially changes understanding or the plan.
+5. Add assessment results and learner artifacts by reference; do not copy full conversations.
+6. Update `learner/profile.md` only for durable cross-course preferences, strengths, needs, or demonstrated prerequisite knowledge.
+7. Use evidence from another course to personalize teaching, but do not silently change that course's progress.
+8. When coverage or sequencing changes, update `roadmap.md` for capability dependencies and `syllabus.md` for the concrete teaching path; record why in their revision logs.
+9. Record course status transitions. Use `completed-with-mastery` only after independent completion evidence; use `completed-with-gaps` when the learning path ends with unresolved core criteria. Never equate archiving, exposure, or elapsed time with completion.
 
 ## Use Specialized Capabilities
 

@@ -54,8 +54,16 @@ class InitLearningStudioTest(unittest.TestCase):
                 (SKILL_ROOT / "assets/course-template/syllabus.md").read_bytes(),
             )
             self.assertIn(
-                "schema_version: 1",
+                "schema_version: 2",
                 (destination / "learning-studio.yaml").read_text(),
+            )
+            self.assertIn(
+                "## Course Lifecycle",
+                (destination / "courses/_template/course.md").read_text(),
+            )
+            self.assertIn(
+                "| Date | Capability ID | Task or artifact |",
+                (destination / "courses/_template/progress.md").read_text(),
             )
 
     def test_initializes_an_existing_empty_directory(self) -> None:

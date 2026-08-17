@@ -84,20 +84,41 @@ Choose the learning shape from the goal rather than the subject label alone:
 
 Use projects throughout a course when integration matters; do not reserve all application for the end. Use an exam only when recall under constraints or broad independent coverage is meaningful.
 
+Treat lifecycle, path completion, and mastery as related but distinct facts:
+
+- `planned`: designed but not started
+- `active`: currently progressing
+- `paused`: intentionally deferred with a recorded resume point
+- `completed-with-mastery`: the learning path ended and the agreed completion evidence was demonstrated under meaningful independent conditions
+- `completed-with-gaps`: the learning path ended, but named core capabilities remain unresolved
+- `archived`: retained without an active learning goal; this says nothing by itself about completion or mastery
+
+Never use an unqualified `completed` status. Record enrollment, start,
+completion, and archive dates when they occur, and append every status change to
+the lifecycle history. Preserve the current status when a course goal changes;
+change status only when the course actually crosses a lifecycle boundary.
+
+Before completing a course, reconcile the final evidence with every core roadmap
+criterion and the agreed completion evidence. Record whether the planned path
+ended, the mastery outcome, remaining gaps, and the next maintenance,
+remediation, or progression step. A learner may deliberately finish a course
+with gaps; report that honestly instead of silently extending the course or
+claiming mastery.
+
 ## Durable State
 
 Use durable state only for a tracked course.
 
-New studios include `learning-studio.yaml` with a structure schema version. Treat it as studio metadata, not learner evidence. Do not add, remove, or change a version marker in an existing studio without an explicit migration workflow.
+New studios include `learning-studio.yaml` with a structure schema version. Treat it as studio metadata, not learner evidence. Schema 2 uses the explicit evidence ledger and lifecycle contract in this reference. Do not add, remove, or change a version marker in an existing studio without the explicit workflow in [studio migration](studio-migration.md).
 
 Keep shared memory in `learner/profile.md`. Store only lasting preferences, goals, demonstrated strengths, recurring needs, and cross-course prerequisite evidence.
 
 Keep each course under `courses/<course-slug>/`:
 
-- `course.md`: stable goal, constraints, diagnostic baseline, teaching agreement, and completion evidence
+- `course.md`: stable goal, constraints, diagnostic baseline, teaching agreement, lifecycle history, completion evidence, and completion record
 - `roadmap.md`: dependency-aware curriculum, mastery criteria, statuses, and adaptation log
 - `syllabus.md`: complete course arc, concrete modules and lesson cards, roadmap mappings, representative sources and anchors, assessment architecture, independent workload, pacing, integration milestones, and blueprint revisions
-- `progress.md`: current position, evidence ledger, review queue, completed work, and next step
+- `progress.md`: current position, explicit evidence ledger, review queue, completed work, and next step
 - `misconceptions.md`: unresolved and resolved misunderstandings with evidence
 - `lessons/`: authored Markdown or HTML lesson artifacts
 - `sessions/`: concise records of meaningful tutoring interactions
@@ -109,6 +130,8 @@ After the learner explicitly selects tracked mode, create a course by copying th
 ## State Update Rules
 
 - Record evidence, not praise or guesses.
+- For each ledger entry, keep the task or artifact, conditions and support, observed evidence, status judgment, uncertainty, and next retrieval distinct.
+- Use uncertainty to identify what still needs testing. Do not interpret a blank observation, missing artifact, or unattempted task as failed performance.
 - Keep an unresolved misconception until later work demonstrates correction and retention.
 - Distinguish `not assessed`, `emerging`, `developing`, `demonstrated`, and `retained` instead of inventing precise percentages.
 - Record skipped material and the evidence or learner decision that justified skipping it.
@@ -117,3 +140,4 @@ After the learner explicitly selects tracked mode, create a course by copying th
 - Avoid sensitive personal data that does not improve teaching.
 - Use the learner's latest explicit statement when stored preferences conflict, then update the state.
 - Update dates and the next action before ending a meaningful session.
+- Record lifecycle transitions without rewriting history, and reconcile the completion record whenever a course reaches either completion status.

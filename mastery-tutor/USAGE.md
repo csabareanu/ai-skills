@@ -36,6 +36,12 @@ installed, inspect that path and decide which version the project should use.
 
 ## Create a brand-new learning studio
 
+Before the studio exists, its project-local skill naturally cannot be loaded.
+Bootstrap it by running the initializer directly from this central `ai-skills`
+copy, using `SKILL_SOURCE` as shown above. With `--link-skill`, the same operation
+creates `.agents/skills/mastery-tutor` inside the destination. Then launch or
+restart Codex from the new studio so that local link is discovered.
+
 The initializer accepts a destination that does not exist, is empty, or
 contains only `.git`. It refuses every other existing destination and has no
 force or overwrite option.
@@ -147,6 +153,36 @@ copy the canonical syllabus into that existing template without replacing its
 other files. This is a narrow compatibility repair, not a schema migration.
 Copied studio and syllabus files are project state; do not symlink them back
 into this skill.
+
+## Migrate an older learning studio
+
+Do not run the initializer against an existing studio. Preview the schema-2
+migration from the central skill source:
+
+```bash
+python3 "$SKILL_SOURCE/scripts/migrate_learning_studio.py" \
+  --dry-run \
+  "$PROJECT_ROOT"
+```
+
+After reviewing the preview, choose a new backup path outside the studio and
+run the migration:
+
+```bash
+BACKUP_ROOT=/absolute/path/to/learning-studio-schema-1-backup
+
+python3 "$SKILL_SOURCE/scripts/migrate_learning_studio.py" \
+  --backup-dir "$BACKUP_ROOT" \
+  "$PROJECT_ROOT"
+```
+
+The migrator supports structurally recognizable unversioned studios and schema
+1. It refuses newer schemas, custom evidence tables, incomplete course
+directories, existing backup destinations, and the ambiguous old `completed`
+status. It preserves old evidence and conditions, leaves unknown new fields
+blank, records unknown historical lifecycle dates honestly, and never modifies
+the live studio during `--dry-run`. See
+`references/studio-migration.md` for the complete safety and review workflow.
 
 Keep a root `AGENTS.md` with any repository-specific privacy, tool, and working
 rules. Do not place learner history inside the symlinked `mastery-tutor`

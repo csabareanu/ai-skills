@@ -6,6 +6,11 @@ Initialize a studio only after the learner explicitly selects tracked-course mod
 
 Use `scripts/init_learning_studio.py` instead of recreating the structure manually. The script combines the generic studio assets with the canonical syllabus template.
 
+The destination does not need to discover the skill before it exists. Run the
+initializer directly from the installed or source `mastery-tutor` directory.
+When `--link-skill` is selected, initialization creates the project-local skill
+link that future Codex sessions in the new studio will discover.
+
 ## Safety Contract
 
 - Accept a destination that does not exist, is empty, or contains only `.git`.
@@ -52,3 +57,4 @@ The templates contain no personal history or copied learner preferences.
 3. Populate it from the approved consultation plan and any unresolved diagnostic evidence.
 4. Register the course in `courses/index.md`.
 5. Begin instruction only after the tracked course state is coherent.
+6. Start or restart Codex inside the new studio so a project-local skill link can be discovered.
