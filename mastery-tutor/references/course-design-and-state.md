@@ -4,9 +4,10 @@
 
 1. Intake and diagnostic
 2. Adaptive roadmap
-3. Course shape and completion
-4. Durable state
-5. State update rules
+3. Concrete course blueprint
+4. Course shape and completion
+5. Durable state
+6. State update rules
 
 ## Intake And Diagnostic
 
@@ -44,6 +45,17 @@ Expose dependencies and the current recommended path. Detail upcoming lessons ju
 
 Do not erase history when the roadmap changes. Record the reason in the roadmap's adaptation log. Ask before changing the target outcome, depth, or final deliverable.
 
+## Concrete Course Blueprint
+
+Create `syllabus.md` after the initial roadmap. Keep the two artifacts distinct:
+
+- `roadmap.md` records what must be mastered, why it depends on other capabilities, how mastery will be observed, and current status.
+- `syllabus.md` records the concrete teaching path: course arc, modules, lesson cards, source and example spine, practice, assessment architecture, independent workload, pacing, and integration milestones.
+
+The blueprint is more concrete than the roadmap but less detailed than an authored lesson. Name what each lesson will address and what the learner will do without prewriting explanations, solutions, code, assessment answers, or detailed facilitation scripts.
+
+Follow [curriculum blueprint](curriculum-blueprint.md) for candidate discovery, lesson-card fields, project progression, and the quality audit.
+
 ## Course Shape And Completion
 
 Choose the learning shape from the goal rather than the subject label alone:
@@ -67,6 +79,7 @@ Keep each course under `courses/<course-slug>/`:
 
 - `course.md`: stable goal, constraints, diagnostic baseline, teaching agreement, and completion evidence
 - `roadmap.md`: dependency-aware curriculum, mastery criteria, statuses, and adaptation log
+- `syllabus.md`: complete course arc, concrete modules and lesson cards, roadmap mappings, representative sources and anchors, assessment architecture, independent workload, pacing, integration milestones, and blueprint revisions
 - `progress.md`: current position, evidence ledger, review queue, completed work, and next step
 - `misconceptions.md`: unresolved and resolved misunderstandings with evidence
 - `lessons/`: authored Markdown or HTML lesson artifacts
@@ -74,7 +87,7 @@ Keep each course under `courses/<course-slug>/`:
 - `assessments/`: assessment prompts, results, rubrics, and feedback
 - `artifacts/`: learner work or links to work retained elsewhere
 
-Create a course by copying the structure in `courses/_template/`. Register it in `courses/index.md`. Use stable, lowercase, hyphenated slugs and never reuse a slug for a different goal.
+Create a course by copying the structure in `courses/_template/`. If that template lacks `syllabus.md`, copy `assets/course-template/syllabus.md` into it without overwriting any customized state. For an existing course that needs curriculum planning but has no syllabus, copy the studio's syllabus template into the course and reconcile it with the existing goal and roadmap. Register every course in `courses/index.md`. Use stable, lowercase, hyphenated slugs and never reuse a slug for a different goal.
 
 ## State Update Rules
 

@@ -75,6 +75,7 @@ courses/
   _template/
     course.md
     roadmap.md
+    syllabus.md
     progress.md
     misconceptions.md
     lessons/
@@ -87,6 +88,12 @@ Each real course receives its own directory under `courses/<course-slug>/`
 using that template. If the repository is not yet a learning studio, invoke
 `$mastery-tutor` and tell it where you want durable state kept. It should ask
 before creating the studio and course files.
+
+The skill bundles a reusable syllabus source at
+`assets/course-template/syllabus.md`. When an older studio has no
+`courses/_template/syllabus.md`, Mastery Tutor can copy that file into the
+studio without replacing its other templates. The copied syllabus is project
+state; do not symlink it back into this skill.
 
 Keep a root `AGENTS.md` with any repository-specific privacy, tool, and working
 rules. Do not place learner history inside the symlinked `mastery-tutor`
