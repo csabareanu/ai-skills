@@ -38,6 +38,7 @@ class InitLearningStudioTest(unittest.TestCase):
                 "courses/_template/syllabus.md",
                 "courses/_template/progress.md",
                 "courses/_template/misconceptions.md",
+                "courses/_template/lessons/_template.md",
                 "courses/_template/assessments/_template.md",
                 "courses/_template/sessions/_template.md",
             ]
@@ -65,6 +66,11 @@ class InitLearningStudioTest(unittest.TestCase):
                 "| Date | Capability ID | Task or artifact |",
                 (destination / "courses/_template/progress.md").read_text(),
             )
+            lesson_template = (
+                destination / "courses/_template/lessons/_template.md"
+            ).read_text()
+            self.assertIn("## What To Remember", lesson_template)
+            self.assertIn("## Revision Log", lesson_template)
 
     def test_initializes_an_existing_empty_directory(self) -> None:
         with tempfile.TemporaryDirectory() as temporary_directory:

@@ -92,8 +92,13 @@ treat not-yet-taught material as a misconception or failed lesson evidence.
 
 After any brief retrieval, present substantial theory, a mental model, and a
 worked example in the conversation before independently assessing new material.
-The saved lesson artifact should mirror and preserve what the learner receives;
-it must not replace visible teaching in the conversation.
+Save each formal lesson as a self-contained reference chapter that preserves
+the final corrected explanation, worked material, important limits, and review
+prompts without requiring the conversation transcript. It must mirror rather
+than replace visible teaching. Keep exact learner responses, support conditions,
+and mastery judgments in session and progress records. Later clarifications may
+improve the lesson, but identify substantial additions in its revision log and
+do not imply that they were taught in the original session.
 
 During programming lessons, default to learner-authored code for the behavior
 that embodies the target concept. Do not generate or directly edit that target

@@ -3,11 +3,12 @@
 ## Contents
 
 1. Lesson design
-2. Subject-appropriate evidence
-3. Programming authorship
-4. Practice and feedback
-5. Mastery decisions
-6. Assessment integrity
+2. Durable lesson reference
+3. Subject-appropriate evidence
+4. Programming authorship
+5. Practice and feedback
+6. Mastery decisions
+7. Assessment integrity
 
 ## Lesson Design
 
@@ -53,6 +54,37 @@ choices and wait for the learner before substituting another lesson. Treat an
 approved substitute as an explicit sequencing or pacing adaptation; update the
 syllabus and course state. Never silently count a diagnostic or retrieval
 checkpoint as completion of the blocked lesson.
+
+## Durable Lesson Reference
+
+Create or update one lesson artifact under `lessons/` for every formal lesson.
+Use the bundled lesson template as a starting point. Make the artifact usable as
+a standalone study chapter after the conversation is no longer available.
+
+A durable lesson should normally preserve:
+
+- the outcome, prerequisites, and connection to the course arc
+- important vocabulary, theory, and mental models in coherent explanatory prose
+- worked examples, demonstrations, cases, or source material actually used
+- assumptions, limits, failure modes, common confusions, and corrected models
+- a concise summary of what to remember
+- retrieval or self-check prompts and links to relevant sources or artifacts
+
+Preserve the final corrected understanding rather than a transcript of every
+turn. Keep exact learner answers, grading tables, support conditions, evidence
+status, and chronological interaction in `sessions/` and `progress.md`; link to
+them when useful. Generalize an observed mistake into a reusable warning only
+when doing so improves the lesson.
+
+Do not reveal answers to active independent assessments in the lesson. Include
+worked solutions only after they have been discussed or released, and label
+tutor-authored examples separately from learner-authored artifacts.
+
+Lessons remain revisable references after their original delivery. Correct
+errors and add small clarifications directly. Record substantial later
+explanations, examples, changed scope, or source updates in the lesson revision
+log, including whether the material was part of the original lesson or added
+later. Never rewrite history by presenting later material as originally taught.
 
 ## Subject-Appropriate Evidence
 

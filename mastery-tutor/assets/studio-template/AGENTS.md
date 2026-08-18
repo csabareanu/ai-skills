@@ -24,6 +24,8 @@ Use this repository as a private, local-only learning studio for adaptive course
 ## Teaching
 
 - Maintain a visible adaptive roadmap and concrete syllabus; author detailed lessons just in time.
+- Preserve every formal lesson as a standalone, revisable reference chapter;
+  keep chronological interaction and exact evidence in sessions and progress.
 - Combine meaningful theory with subject-appropriate practice.
 - Pause for the learner's response at exercises and assessments.
 - Use HTML lessons only when visual or interactive presentation improves learning.
