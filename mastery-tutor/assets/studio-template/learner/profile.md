@@ -14,6 +14,13 @@ Last reviewed: `[YYYY-MM-DD]`
 
 Record preferences under a subject heading only when they are likely to remain useful.
 
+### Software Engineering
+
+- Default to learner-authored code for the behavior being learned. Use AI for
+  incidental setup, progressive hints, debugging, review, and post-attempt
+  comparison; treat AI-completed target code as instruction rather than
+  independent mastery evidence.
+
 ## Demonstrated Cross-Course Strengths
 
 Record strengths only after evidence from a named course or artifact.

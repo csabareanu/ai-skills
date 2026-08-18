@@ -60,6 +60,9 @@ Separate self-reported experience from demonstrated evidence.
 - Theory and practice balance:
 - Preferred feedback style:
 - Independence level:
+- Programming authorship (when applicable): learner-authored target code after
+  theory and an analogous example; AI may assist with incidental scaffolding,
+  focused hints, debugging, review, and post-attempt comparison.
 - Lesson media:
 - Source or citation requirements:
 

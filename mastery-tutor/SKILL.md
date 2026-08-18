@@ -95,6 +95,13 @@ worked example in the conversation before independently assessing new material.
 The saved lesson artifact should mirror and preserve what the learner receives;
 it must not replace visible teaching in the conversation.
 
+During programming lessons, default to learner-authored code for the behavior
+that embodies the target concept. Do not generate or directly edit that target
+implementation before a meaningful attempt unless the learner explicitly asks
+for direct instruction. Use AI progressively for incidental scaffolding,
+hints, debugging, review, and post-attempt comparison. Treat tutor- or
+AI-completed target code as instruction, not independent mastery evidence.
+
 If tooling or another constraint blocks the next syllabus card, explain the
 options and obtain the learner's direction before substituting another lesson
 or checkpoint. Label the substitute accurately and record any approved

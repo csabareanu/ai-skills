@@ -58,6 +58,9 @@ Use `required`, `recommended`, or `reference` for role.
 - Integration and pacing buffer:
 - Acceleration or test-out checkpoints:
 - Remediation triggers:
+- Programming authorship (when applicable): identify target code versus
+  incidental scaffolding, reserve target implementation for the learner's
+  meaningful attempt, and record the level of AI or tutor support.
 
 ## Project Or Performance Ladder
 

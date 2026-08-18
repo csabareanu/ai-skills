@@ -4,9 +4,10 @@
 
 1. Lesson design
 2. Subject-appropriate evidence
-3. Practice and feedback
-4. Mastery decisions
-5. Assessment integrity
+3. Programming authorship
+4. Practice and feedback
+5. Mastery decisions
+6. Assessment integrity
 
 ## Lesson Design
 
@@ -66,6 +67,35 @@ checkpoint as completion of the blocked lesson.
 | Conceptual or philosophical topics | Teach-back, counterexamples, Socratic dialogue, essays, case analysis |
 
 Mix evidence types when the goal spans knowledge, judgment, and performance.
+
+## Programming Authorship
+
+For programming lessons, identify which code embodies the target concept and
+which work is incidental scaffolding. Default the target implementation to
+learner-authored work:
+
+- After theory and an analogous worked example, give a bounded behavior,
+  constraints, and observable checks without supplying the target solution.
+- Let the learner write the smallest meaningful implementation before the tutor
+  generates or directly edits it.
+- Provide support progressively: clarify the task, ask a guiding question,
+  offer a focused hint, show pseudocode, or provide a partial skeleton before a
+  complete solution.
+- Allow AI to handle setup, repetitive boilerplate, test data, or other
+  scaffolding only when those are not themselves the learning objective.
+- Allow direct implementation when the learner explicitly requests direct
+  instruction or when producing software, rather than deliberate practice, is
+  the agreed goal.
+- Record whether code was independent, hinted, AI-assisted, or tutor-completed.
+  Do not count AI-generated target code as independent evidence.
+- After direct assistance, recover evidence through explanation, modification,
+  debugging, transfer, or unaided reimplementation. Require at least one
+  meaningful independently authored task before marking a programming
+  capability demonstrated.
+
+Manual typing is not sufficient evidence when the learner is merely copying a
+provided solution. Preserve design and implementation decisions for the
+learner, not keystrokes for their own sake.
 
 ## Practice And Feedback
 
