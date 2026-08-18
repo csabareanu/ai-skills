@@ -154,35 +154,17 @@ other files. This is a narrow compatibility repair, not a schema migration.
 Copied studio and syllabus files are project state; do not symlink them back
 into this skill.
 
-## Migrate an older learning studio
+## Open an existing learning studio
 
-Do not run the initializer against an existing studio. Preview the schema-2
-migration from the central skill source:
+The current skill supports schema 2 studios only. Before tracked work, confirm
+that `learning-studio.yaml` reports schema 2 and studio type
+`mastery-tutor`.
 
-```bash
-python3 "$SKILL_SOURCE/scripts/migrate_learning_studio.py" \
-  --dry-run \
-  "$PROJECT_ROOT"
-```
-
-After reviewing the preview, choose a new backup path outside the studio and
-run the migration:
-
-```bash
-BACKUP_ROOT=/absolute/path/to/learning-studio-schema-1-backup
-
-python3 "$SKILL_SOURCE/scripts/migrate_learning_studio.py" \
-  --backup-dir "$BACKUP_ROOT" \
-  "$PROJECT_ROOT"
-```
-
-The migrator supports structurally recognizable unversioned studios and schema
-1. It refuses newer schemas, custom evidence tables, incomplete course
-directories, existing backup destinations, and the ambiguous old `completed`
-status. It preserves old evidence and conditions, leaves unknown new fields
-blank, records unknown historical lifecycle dates honestly, and never modifies
-the live studio during `--dry-run`. See
-`references/studio-migration.md` for the complete safety and review workflow.
+If the marker is absent, malformed, or reports another schema or studio type,
+keep the studio read-only. Do not run the initializer against it, edit the
+marker to bypass the check, or infer a conversion. Review the studio manually;
+if a genuine future schema transition is introduced, add a migration designed
+and tested for studios that actually need it.
 
 Keep a root `AGENTS.md` with any repository-specific privacy, tool, and working
 rules. Do not place learner history inside the symlinked `mastery-tutor`

@@ -109,7 +109,7 @@ claiming mastery.
 
 Use durable state only for a tracked course.
 
-New studios include `learning-studio.yaml` with a structure schema version. Treat it as studio metadata, not learner evidence. Schema 2 uses the explicit evidence ledger and lifecycle contract in this reference. Do not add, remove, or change a version marker in an existing studio without the explicit workflow in [studio migration](studio-migration.md).
+New studios include `learning-studio.yaml` with a structure schema version. Treat it as studio metadata, not learner evidence. Schema 2 uses the explicit evidence ledger and lifecycle contract in this reference, and it is the only schema supported by the current skill. If an existing marker is absent, malformed, or reports another schema or studio type, keep the studio read-only. Do not add, remove, or change the marker to bypass that boundary.
 
 Keep shared memory in `learner/profile.md`. Store only lasting preferences, goals, demonstrated strengths, recurring needs, and cross-course prerequisite evidence.
 

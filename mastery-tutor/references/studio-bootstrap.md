@@ -16,7 +16,7 @@ link that future Codex sessions in the new studio will discover.
 - Accept a destination that does not exist, is empty, or contains only `.git`.
 - Refuse symlink destinations, files, and directories containing any other entry.
 - Never add a force or overwrite path to the initialization workflow.
-- Treat an existing studio as a migration case; do not run the initializer against it.
+- Treat an existing studio as protected state; do not run the initializer against it. The current skill supports schema 2 only and must keep any unversioned, malformed, or differently versioned studio read-only.
 - Run `--dry-run` first and summarize the planned destination and structure before initialization.
 - Use `--link-skill` only when the learner wants a project-local absolute symlink to this skill.
 

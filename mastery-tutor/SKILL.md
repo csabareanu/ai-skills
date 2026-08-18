@@ -23,7 +23,7 @@ Do this only in `tracked course` mode.
 
 1. Find the repository root containing `learner/` and `courses/`.
 2. Read `learning-studio.yaml` when present, then the root `AGENTS.md`, `learner/profile.md`, and `courses/index.md`.
-3. If the marker is absent or older than the bundled schema, keep the studio read-only until the learner approves the explicit migration workflow in [studio migration](references/studio-migration.md). Refuse unsupported or newer schemas rather than guessing.
+3. Require the marker to report schema 2 and studio type `mastery-tutor`. If it is absent, malformed, or reports another schema or studio type, keep the studio read-only and explain that it is unsupported. Do not run the initializer, rewrite the marker, or infer a conversion.
 4. For an existing course, read its `course.md`, `roadmap.md`, `syllabus.md` when present, `progress.md`, and `misconceptions.md` before teaching or planning.
 5. If no learning studio exists, ask where to keep durable state. After the learner confirms a new or empty destination, read [studio bootstrap](references/studio-bootstrap.md), preview the initialization, and create the studio non-destructively. Do not scatter course state across unrelated projects.
 6. Treat the files as the durable memory. Do not claim to remember evidence that is absent from the conversation or state files.
@@ -32,7 +32,6 @@ Do this only in `tracked course` mode.
 
 - For a new course, diagnostic, or curriculum revision, read [course design and state](references/course-design-and-state.md) and [curriculum blueprint](references/curriculum-blueprint.md).
 - For initializing a new tracked learning studio, read [studio bootstrap](references/studio-bootstrap.md) and use `scripts/init_learning_studio.py`.
-- For an existing unversioned or schema-1 studio, read [studio migration](references/studio-migration.md) and use `scripts/migrate_learning_studio.py`.
 - For lesson delivery, exercises, quizzes, labs, discussion, or mastery decisions, read [lesson and assessment](references/lesson-and-assessment.md).
 - For diagrams, interactive explanations, art comparisons, timelines, or simulations, read [visual lessons](references/visual-lessons.md) and reuse `assets/interactive-lesson-template.html` when appropriate.
 - For an `untracked lesson`, use a lightweight version of the same loop and skip studio discovery and state updates.
