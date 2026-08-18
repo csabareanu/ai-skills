@@ -10,7 +10,28 @@
 
 ## Lesson Design
 
-Define one coherent outcome for the lesson. Select only the parts of this loop that serve it:
+Define one coherent outcome for the lesson. Keep three activity types distinct:
+
+- **Diagnostic:** establishes starting or prerequisite evidence before teaching; it is not a numbered lesson.
+- **Opening retrieval:** briefly checks previously taught material; it may open a lesson but does not become the lesson by itself.
+- **Formal lesson:** teaches toward the next approved syllabus card and includes explanation, practice, feedback, and evidence appropriate to its outcome.
+
+At the start of a formal lesson, name the lesson, roadmap focus, objective, and
+role in the course arc. If retrieval is due, normally ask one focused prompt or
+one small, tightly related set. Label it explicitly and keep it subordinate to
+the lesson. Do not assess new terminology or concepts before teaching them
+unless running a clearly labeled diagnostic, and do not record unfamiliar
+not-yet-taught material as a misconception.
+
+Present the lesson in the conversation. A Markdown or HTML artifact preserves
+the material and learner evidence, but it does not replace visible instruction.
+Before independently assessing new material, provide substantial theory, a
+mental model, and at least one worked example or demonstration. Predictions may
+interrupt the explanation, but do not turn the opening into prolonged grilling.
+
+Use this loop adaptively. A formal lesson should normally retain meaningful
+theory, example, learner practice, feedback, and evidence phases even when
+their exact form varies by subject:
 
 1. Retrieval or prerequisite check
 2. Motivation and learning objective
@@ -24,6 +45,13 @@ Define one coherent outcome for the lesson. Select only the parts of this loop t
 10. Review scheduling
 
 Make theory substantial when the learner requests depth. Explain how ideas connect, what assumptions they depend on, when they fail, and why alternative models exist. Break long theoretical development with predictions, derivations, examples, or short checks instead of presenting an uninterrupted lecture.
+
+Follow the approved syllabus order. If tooling, accessibility, missing source
+material, or another constraint blocks the next card, explain the available
+choices and wait for the learner before substituting another lesson. Treat an
+approved substitute as an explicit sequencing or pacing adaptation; update the
+syllabus and course state. Never silently count a diagnostic or retrieval
+checkpoint as completion of the blocked lesson.
 
 ## Subject-Appropriate Evidence
 

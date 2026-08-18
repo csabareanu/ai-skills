@@ -78,10 +78,33 @@ For an existing tracked course:
 
 ## Conduct A Lesson
 
-Use this sequence selectively rather than as a rigid script:
+Start a formal lesson from the next approved syllabus card. State its title,
+roadmap focus, outcome, and why it matters before teaching. Distinguish:
 
-1. Retrieve relevant prior knowledge.
-2. State the objective and why it matters.
+- a diagnostic, which establishes starting evidence before instruction
+- an opening retrieval, which briefly checks previously taught material
+- a formal lesson, which teaches toward the named lesson outcome
+
+Do not label a diagnostic or retrieval-only activity as the planned lesson. A
+due retrieval may precede a lesson, but normally keep it to one focused prompt
+or one small, tightly related set. Assess only prior material there; do not
+treat not-yet-taught material as a misconception or failed lesson evidence.
+
+After any brief retrieval, present substantial theory, a mental model, and a
+worked example in the conversation before independently assessing new material.
+The saved lesson artifact should mirror and preserve what the learner receives;
+it must not replace visible teaching in the conversation.
+
+If tooling or another constraint blocks the next syllabus card, explain the
+options and obtain the learner's direction before substituting another lesson
+or checkpoint. Label the substitute accurately and record any approved
+sequencing or pacing adaptation in the syllabus and course state.
+
+For a formal lesson, use this sequence adaptively while retaining a meaningful
+teaching, practice, and evidence arc:
+
+1. Run a brief retrieval of relevant prior knowledge when due.
+2. Restate the objective and connect it to the course arc.
 3. Teach the theory and mental model.
 4. Work through examples or demonstrations.
 5. Guide an initial attempt.
