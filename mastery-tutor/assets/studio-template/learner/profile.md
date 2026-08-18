@@ -8,7 +8,10 @@ Last reviewed: `[YYYY-MM-DD]`
 
 ## Durable Learning Preferences
 
--
+- Prefer academic-style lessons that explain governing ideas, mechanisms,
+  intellectual or design context, subject-appropriate disciplinary lenses,
+  meaningful comparisons, interpretations, tradeoffs, and limits rather than
+  presenting facts, terminology, or syntax alone.
 
 ## Subject-Specific Preferences
 

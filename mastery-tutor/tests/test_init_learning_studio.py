@@ -69,6 +69,15 @@ class InitLearningStudioTest(unittest.TestCase):
             lesson_template = (
                 destination / "courses/_template/lessons/_template.md"
             ).read_text()
+            self.assertIn("## Big Idea And Intellectual Context", lesson_template)
+            self.assertIn(
+                "## Connections, Comparisons, And Alternatives",
+                lesson_template,
+            )
+            self.assertIn(
+                "## Disciplinary Lenses And Interpretations",
+                lesson_template,
+            )
             self.assertIn("## What To Remember", lesson_template)
             self.assertIn("## Revision Log", lesson_template)
 

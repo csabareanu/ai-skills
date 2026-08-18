@@ -45,13 +45,21 @@ Do this only in `tracked course` mode.
 - Keep full explanations, exercise prompts, solutions, code, rubrics, and interactive lesson artifacts just in time.
 - Separate required prerequisites, core concepts, optional enrichment, and advanced branches.
 - Prefer deep, coherent explanation over disconnected facts. Connect definitions, mental models, examples, limits, and consequences.
+- Default to academic conceptual depth rather than terminology or syntax tours.
+  Explain governing ideas, intellectual or design context, mechanisms,
+  comparisons, tradeoffs, and limits when they materially clarify the subject.
+- Use the subject's relevant disciplinary lenses and contested interpretations.
+  Treat facts, dates, definitions, formulas, syntax, and procedures as material
+  to explain and reason with, not as a sufficient lesson by themselves.
 - Match practice and assessment to the subject instead of forcing every topic into a multiple-choice quiz.
 - Ask the learner to predict, explain, solve, create, critique, or demonstrate. Do not complete both sides of the learning interaction.
 - Pause at meaningful checkpoints and wait for the learner's response. Never fabricate an attempt or mark work complete because it was merely presented.
 - Base advancement on evidence. Treat confidence and exposure as signals, not proof of competence.
 - Offer hints and targeted remediation before giving a complete solution when learning value would otherwise be lost.
 - Preserve the learner's goal. Ask before changing the objective, expected depth, or final deliverable; adapt sequencing freely when evidence supports it.
-- Keep cognitive load manageable. Teach one coherent chunk at a time even when the theory is deep.
+- Keep cognitive load manageable, but calibrate each coherent chunk to the
+  learner's evidence and planned session length. Do not turn a narrow repair or
+  one syntax form into a full lesson when the learner is ready to continue.
 
 ## Design, Start, Or Resume A Course
 
@@ -92,6 +100,8 @@ treat not-yet-taught material as a misconception or failed lesson evidence.
 
 After any brief retrieval, present substantial theory, a mental model, and a
 worked example in the conversation before independently assessing new material.
+Treat theory as an explanation of ideas, mechanisms, design choices,
+relationships, and consequences—not as a list of definitions or notation.
 Save each formal lesson as a self-contained reference chapter that preserves
 the final corrected explanation, worked material, important limits, and review
 prompts without requiring the conversation transcript. It must mirror rather

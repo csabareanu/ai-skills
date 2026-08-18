@@ -3,12 +3,13 @@
 ## Contents
 
 1. Lesson design
-2. Durable lesson reference
-3. Subject-appropriate evidence
-4. Programming authorship
-5. Practice and feedback
-6. Mastery decisions
-7. Assessment integrity
+2. Conceptual depth and lesson density
+3. Durable lesson reference
+4. Subject-appropriate evidence
+5. Programming authorship
+6. Practice and feedback
+7. Mastery decisions
+8. Assessment integrity
 
 ## Lesson Design
 
@@ -55,6 +56,67 @@ approved substitute as an explicit sequencing or pacing adaptation; update the
 syllabus and course state. Never silently count a diagnostic or retrieval
 checkpoint as completion of the blocked lesson.
 
+## Conceptual Depth And Lesson Density
+
+Default to an academic explanatory style while selecting only dimensions that
+genuinely clarify the lesson. Build an appropriate path through:
+
+1. the central problem, question, or abstraction
+2. relevant intellectual, historical, or design context
+3. the governing theory, semantics, mechanism, or causal model
+4. the notation, syntax, procedure, or technique that expresses that model
+5. connections to prior knowledge and comparisons with genuine alternatives
+6. assumptions, tradeoffs, limits, failure modes, and consequences
+7. application, interpretation, critique, or transfer
+
+Do not mechanically force every item into every lesson. Omit decorative history
+and superficial comparisons. Do not call a glossary, syntax tour, sequence of
+commands, or list of rules substantial theory.
+
+Select disciplinary lenses that reveal structure, causation, interpretation,
+or consequences. Use them as questions the subject asks, not as a checklist:
+
+| Subject shape | Useful lenses when relevant |
+| --- | --- |
+| History and social inquiry | comparison with related events or movements; institutions, class, collective action, economics, political philosophy, ideology, agency versus structure, contingency, memory, and historiography |
+| Programming and engineering | design philosophy, semantics, compiler or runtime behavior, type and memory models, paradigms, tooling, organizational consequences, idioms, alternatives, and tradeoffs |
+| Mathematics and science | derivation, mechanism, model assumptions, evidence, epistemology, historical development, competing models, approximation, boundary conditions, and empirical limits |
+| Literature, art, and design | form, technique, aesthetics, interpretation, historical and cultural context, audience, power, ethics, and comparison with related works or movements |
+| Human languages | grammar, semantics, pragmatics, register, comparative linguistics, historical change, culture, discourse, and translation tradeoffs |
+| Practical and professional subjects | governing principles, systems context, constraints, safety, ethics, failure analysis, standards, alternatives, and consequences |
+
+For example, a French Revolution lesson should not stop at dates and actors.
+According to its outcome, connect events to comparable revolutions or reform
+movements, social structure and collective action, economic pressures,
+Enlightenment and political philosophy, institutional change, competing causal
+explanations, and later historical memory. Make comparison criteria explicit
+and avoid false equivalence or presentism.
+
+For programming-language lessons, teach the language as a system of software-
+engineering choices. When relevant, explain:
+
+- the problems and priorities that shaped the language
+- compiler, runtime, type, memory, error, package, and concurrency models
+- how surface syntax expresses those semantics
+- idiomatic use and why direct translation from another language may be weak
+- comparisons with languages the learner knows, distinguishing syntactic
+  resemblance from semantic difference
+- benefits purchased by a design choice and the costs or capabilities forgone
+
+Size the lesson to the agreed session duration and current evidence. A full
+guided session should contain a substantial conceptual and performance arc, not
+one isolated token or tiny exercise. Treat narrow prerequisite repair as a
+segment when possible, then continue into the approved lesson after the repair
+succeeds. If the learner progresses quickly, deepen the explanation, compare an
+alternative, debug a failure, or add transfer instead of ending at the minimum
+check.
+
+Use checkpoints only when the response can change the explanation, support, or
+next task. Avoid interrupting every small conceptual move for evidence
+bookkeeping. For programming, prefer an evolving meaningful program, debugging
+episode, design decision, or behavior change over several disconnected toy
+edits.
+
 ## Durable Lesson Reference
 
 Create or update one lesson artifact under `lessons/` for every formal lesson.
@@ -64,7 +126,10 @@ a standalone study chapter after the conversation is no longer available.
 A durable lesson should normally preserve:
 
 - the outcome, prerequisites, and connection to the course arc
-- important vocabulary, theory, and mental models in coherent explanatory prose
+- the central idea, relevant intellectual or design context, important
+  vocabulary, theory, mechanisms, and mental models in coherent prose
+- meaningful connections, comparisons, alternatives, and tradeoffs
+- subject-appropriate disciplinary lenses and important interpretations
 - worked examples, demonstrations, cases, or source material actually used
 - assumptions, limits, failure modes, common confusions, and corrected models
 - a concise summary of what to remember

@@ -81,7 +81,11 @@ For every lesson card, define:
 - title
 - essential question or target capability
 - roadmap capability IDs developed or assessed
+- central idea and relevant intellectual, historical, or design context
+- governing theory, semantics, mechanism, or causal model
 - key concepts or techniques
+- subject-appropriate disciplinary lenses and important interpretations
+- meaningful connections, comparisons, alternatives, or tradeoffs
 - concrete anchors appropriate to the subject, such as systems, cases, source texts, artworks, datasets, scenarios, demonstrations, or materials
 - guided practice, lab, problem solving, discussion, rehearsal, critique, or other supported performance
 - independent evidence, such as homework, retrieval, transfer, creation, analysis, or demonstration
@@ -93,6 +97,12 @@ State lesson dependencies explicitly, using `none` when there are no prerequisit
 Use concrete anchors to illuminate transferable ideas. For current or proprietary examples, distinguish verified public evidence from analogy or inference.
 
 Keep a lesson coherent. Split a lesson when its concepts, practice, or expected implementation cannot realistically fit the stated session length. Combine lessons when separating them would create disconnected fragments.
+
+Calibrate lesson density in both directions. Do not allocate a full guided
+session to terminology, one syntax form, or a narrow prerequisite repair when
+the learner can reasonably continue. Give every planned session a substantial
+conceptual and performance arc, with deeper explanation, comparison, failure
+analysis, or transfer available when the learner advances quickly.
 
 Make theory-practice relationships explicit. Do not add a lab merely for activity; identify what concept or capability its evidence can support.
 
@@ -153,6 +163,14 @@ Before presenting or saving the blueprint, verify:
 - Every module has an exit capability and prepares a named later demand.
 - Definitions and prerequisites precede the capabilities that depend on them.
 - The sequence develops depth rather than repeating labels at increasing scale.
+- Lesson cards contain governing ideas and mechanisms rather than syntax or
+  terminology alone.
+- Lessons use relevant disciplinary lenses to explain causation,
+  interpretation, alternatives, and consequences rather than presenting facts
+  as self-explanatory.
+- Planned session length is credible for the conceptual and performance work;
+  neither trivial fragments nor hidden multi-session work are treated as one
+  ordinary lesson.
 - Core concepts have concrete anchors and meaningful practice.
 - Core capabilities have independent, observable evidence.
 - Required sources and concrete anchors have a stated instructional purpose rather than forming a decorative bibliography.
@@ -176,6 +194,11 @@ Avoid:
 - a catalog of topics without dependencies or mastery evidence
 - lessons that do not map to a roadmap capability or justified enrichment goal
 - a glossary, encyclopedia outline, or table of definitions disguised as a course
+- a syntax, notation, command, or terminology tour presented as theory
+- facts, dates, names, formulas, sources, or procedures presented without
+  causal, conceptual, comparative, or interpretive development
+- decorative disciplinary labels or false analogies added without explanatory
+  criteria
 - modules that could be arbitrarily reordered because they do not build on one another
 - an abrupt beginning with no orientation or an endless ending with no completion boundary
 - a tool, technology, author, or brand shopping list presented as a curriculum
@@ -184,6 +207,10 @@ Avoid:
 - comparisons without a workload, audience, decision context, or evaluation criteria
 - projects rewarded for size, component count, or accidental complexity
 - one lesson hiding a multi-session implementation, proof, performance, or creative process
+- one full session reserved for a trivial fragment when successful learners
+  could continue into depth or transfer
+- repeated micro-checkpoints and evidence bookkeeping that prevent a coherent
+  explanation or meaningful performance
 - repeated survey coverage that displaces deep practice
 - reading or resource lists whose role in learning is unspecified
 - pacing that allocates every session to new material and leaves no room for retrieval, feedback, or remediation

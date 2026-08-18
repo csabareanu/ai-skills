@@ -20,14 +20,35 @@ State the coherent capability this lesson develops.
 
 Connect the lesson to a meaningful question, performance, or later demand.
 
+## Big Idea And Intellectual Context
+
+Explain the central problem or abstraction and any relevant intellectual,
+historical, or design context. Include context for explanatory value, not as
+decoration.
+
 ## Key Vocabulary
 
 Define only terms needed for the lesson and connect them to one another.
 
-## Theory And Mental Model
+## Theory, Mechanism, And Mental Model
 
 Present a coherent explanation that can be understood without the original
-conversation. Include important assumptions and relationships.
+conversation. Explain what happens and why, not merely the visible notation or
+steps. Include important assumptions and relationships.
+
+## Connections, Comparisons, And Alternatives
+
+Connect the model to prior knowledge and compare genuine alternatives,
+including their semantic differences and tradeoffs. Omit comparisons that do
+not improve understanding.
+
+## Disciplinary Lenses And Interpretations
+
+Use the subject's relevant lenses to examine causes, structures,
+interpretations, consequences, or disputes. Examples include philosophical,
+sociological, economic, political, historical, scientific, aesthetic,
+linguistic, ethical, and technical perspectives. Select lenses for explanatory
+power rather than filling a checklist.
 
 ## Worked Examples Or Demonstrations
 

@@ -58,6 +58,12 @@ Separate self-reported experience from demonstrated evidence.
 ## Teaching Agreement
 
 - Theory and practice balance:
+- Academic and conceptual depth: governing ideas, relevant intellectual or
+  design context, mechanisms, comparisons, tradeoffs, and limits before or
+  alongside surface notation and procedure.
+- Lesson density: calibrate coherent conceptual and performance work to the
+  learner's evidence and planned session length; continue into depth or
+  transfer when a narrow repair succeeds early.
 - Preferred feedback style:
 - Independence level:
 - Programming authorship (when applicable): learner-authored target code after
