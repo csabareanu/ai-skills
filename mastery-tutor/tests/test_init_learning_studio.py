@@ -118,6 +118,27 @@ class InitLearningStudioTest(unittest.TestCase):
                 lesson_template,
             )
 
+    def test_studio_agreement_preserves_mastery_tutor_ownership(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            destination = Path(temporary_directory) / "studio"
+
+            result = self.run_initializer(str(destination))
+
+            self.assertEqual(result.returncode, 0, result.stderr)
+            agreement = (destination / "AGENTS.md").read_text()
+            self.assertIn(
+                "`mastery-tutor` owns course design, sequencing, theory depth,",
+                agreement,
+            )
+            self.assertIn(
+                "Supporting skills may propose adaptations and run bounded",
+                agreement,
+            )
+            self.assertIn(
+                "must not independently relax or replace that contract",
+                agreement,
+            )
+
     def test_refuses_a_non_empty_destination_without_changing_it(self) -> None:
         with tempfile.TemporaryDirectory() as temporary_directory:
             destination = Path(temporary_directory) / "existing"

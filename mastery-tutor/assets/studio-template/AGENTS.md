@@ -8,7 +8,13 @@ Use this repository as a private, local-only learning studio for adaptive course
 
 - Use the installed `mastery-tutor` skill for course design, lesson delivery, assessment, and progress work.
 - Keep the discoverable skill at `.agents/skills/mastery-tutor` when using a project-local symlink.
-- Use specialized skills for subject expertise or focused practice while keeping course ownership and progress in this repository.
+- In a tracked course, `mastery-tutor` owns course design, sequencing, theory depth,
+  formal lesson delivery, assessment, and durable course state.
+- Supporting skills may propose adaptations and run bounded activities, but
+  they must not independently relax or replace that contract, resequence the
+  course, change mastery criteria, or update course state. Route proposed
+  adaptations through `mastery-tutor`; ask the learner before material changes
+  to the course goal, depth, or final deliverable.
 
 ## State And Memory
 
