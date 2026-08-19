@@ -38,6 +38,9 @@ Use this repository as a private, local-only learning studio for adaptive course
 - Use relevant disciplinary lenses and interpretations; facts, dates,
   definitions, formulas, syntax, and procedures are material for reasoning,
   not sufficient lessons by themselves.
+- Brevity preferences apply to coordination and feedback, not formal theory.
+  Teach new major concepts through substantial, conversational, textbook-quality
+  exposition rather than compressed notes, outlines, or annotated examples.
 - Calibrate lesson density to the learner and agreed session length; use narrow
   remediation as a segment and continue into depth or transfer when possible.
 - Pause for the learner's response at exercises and assessments.

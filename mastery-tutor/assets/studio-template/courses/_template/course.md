@@ -64,6 +64,12 @@ Separate self-reported experience from demonstrated evidence.
 - Lesson density: calibrate coherent conceptual and performance work to the
   learner's evidence and planned session length; continue into depth or
   transfer when a narrow repair succeeds early.
+- Formal exposition style: develop every major new concept through substantial,
+  conversational explanation rather than compressed notes or outline coverage.
+- Concept-density adaptation: split or extend a lesson when its major concepts
+  cannot each receive adequate exposition and practice; ask only when the
+  adaptation materially changes duration, scope, depth, destination, or final
+  evidence.
 - Preferred feedback style:
 - Independence level:
 - Programming authorship (when applicable): learner-authored target code after

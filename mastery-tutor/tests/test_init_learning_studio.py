@@ -139,6 +139,39 @@ class InitLearningStudioTest(unittest.TestCase):
                 agreement,
             )
 
+    def test_studio_defaults_to_substantial_per_concept_exposition(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            destination = Path(temporary_directory) / "studio"
+
+            result = self.run_initializer(str(destination))
+
+            self.assertEqual(result.returncode, 0, result.stderr)
+            agreement = (destination / "AGENTS.md").read_text()
+            profile = (destination / "learner/profile.md").read_text()
+            course_template = (
+                destination / "courses/_template/course.md"
+            ).read_text()
+            lesson_template = (
+                destination / "courses/_template/lessons/_template.md"
+            ).read_text()
+
+            self.assertIn(
+                "Brevity preferences apply to coordination and feedback",
+                agreement,
+            )
+            self.assertIn("substantial, conversational", profile)
+            self.assertIn("exposition for new theory", profile)
+            self.assertIn("Concept-density adaptation", course_template)
+            self.assertIn("## Major Concept Exposition Map", lesson_template)
+            self.assertIn(
+                "A vocabulary entry, bullet, table row,",
+                lesson_template,
+            )
+            self.assertIn(
+                "heading, or code sample with a brief caption",
+                lesson_template,
+            )
+
     def test_refuses_a_non_empty_destination_without_changing_it(self) -> None:
         with tempfile.TemporaryDirectory() as temporary_directory:
             destination = Path(temporary_directory) / "existing"

@@ -84,6 +84,7 @@ For every lesson card, define:
 - central idea and relevant intellectual, historical, or design context
 - governing theory, semantics, mechanism, or causal model
 - key concepts or techniques
+- major concepts that require their own exposition arcs
 - subject-appropriate disciplinary lenses and important interpretations
 - meaningful connections, comparisons, alternatives, or tradeoffs
 - concrete anchors appropriate to the subject, such as systems, cases, source texts, artworks, datasets, scenarios, demonstrations, or materials
@@ -96,7 +97,14 @@ State lesson dependencies explicitly, using `none` when there are no prerequisit
 
 Use concrete anchors to illuminate transferable ideas. For current or proprietary examples, distinguish verified public evidence from analogy or inference.
 
-Keep a lesson coherent. Split a lesson when its concepts, practice, or expected implementation cannot realistically fit the stated session length. Combine lessons when separating them would create disconnected fragments.
+Keep a lesson coherent. Treat a concept as major when it introduces a distinct
+mental model, mechanism, causal explanation, interpretive problem, design
+choice, or family of failure modes. Estimate enough room for each major
+concept's motivating problem, intuitive account, precise model, worked
+walkthrough, meaningful connection or alternative, limits, questions, and
+practice. Split a lesson when those demands cannot realistically fit the
+stated session length. Combine lessons when separating them would create
+disconnected fragments.
 
 Calibrate lesson density in both directions. Do not allocate a full guided
 session to terminology, one syntax form, or a narrow prerequisite repair when
@@ -165,6 +173,9 @@ Before presenting or saving the blueprint, verify:
 - The sequence develops depth rather than repeating labels at increasing scale.
 - Lesson cards contain governing ideas and mechanisms rather than syntax or
   terminology alone.
+- Every major concept has enough planned space for developed explanation and
+  practice; lesson-level headings, tables, or comparisons do not disguise
+  compressed concept-level coverage.
 - Lessons use relevant disciplinary lenses to explain causation,
   interpretation, alternatives, and consequences rather than presenting facts
   as self-explanatory.
@@ -197,6 +208,8 @@ Avoid:
 - a syntax, notation, command, or terminology tour presented as theory
 - facts, dates, names, formulas, sources, or procedures presented without
   causal, conceptual, comparative, or interpretive development
+- a lesson-wide depth checklist marked complete while individual major
+  concepts receive only definitions, bullets, captions, or brief summaries
 - decorative disciplinary labels or false analogies added without explanatory
   criteria
 - modules that could be arbitrarily reordered because they do not build on one another

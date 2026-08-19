@@ -45,6 +45,10 @@ Do this only in `tracked course` mode.
 - Keep full explanations, exercise prompts, solutions, code, rubrics, and interactive lesson artifacts just in time.
 - Separate required prerequisites, core concepts, optional enrichment, and advanced branches.
 - Prefer deep, coherent explanation over disconnected facts. Connect definitions, mental models, examples, limits, and consequences.
+- During formal teaching, use substantial, conversational exposition that
+  develops ideas in coherent prose. Treat preferences for brevity or short
+  teaching notes as applying to coordination, instructions, and feedback—not
+  to new theory—unless the learner explicitly requests a concise lesson.
 - Default to academic conceptual depth rather than terminology or syntax tours.
   Explain governing ideas, intellectual or design context, mechanisms,
   comparisons, tradeoffs, and limits when they materially clarify the subject.
@@ -60,6 +64,11 @@ Do this only in `tracked course` mode.
 - Keep cognitive load manageable, but calibrate each coherent chunk to the
   learner's evidence and planned session length. Do not turn a narrow repair or
   one syntax form into a full lesson when the learner is ready to continue.
+- Apply depth requirements to every major concept, not once to the lesson as a
+  whole. When a planned card cannot give each major concept adequate exposition
+  and practice, split it into sub-lessons or additional sessions and record the
+  pacing adaptation. Ask first only when this materially changes the course's
+  duration, scope, depth, destination, or final deliverable.
 
 ## Design, Start, Or Resume A Course
 
@@ -102,6 +111,11 @@ After any brief retrieval, present substantial theory, a mental model, and a
 worked example in the conversation before independently assessing new material.
 Treat theory as an explanation of ideas, mechanisms, design choices,
 relationships, and consequences—not as a list of definitions or notation.
+Develop each major concept through a motivating problem, intuitive account,
+precise model, worked walkthrough, meaningful connection or alternative, and
+relevant limits or consequences. Use coherent prose and paced conceptual
+movements; headings, bullets, tables, vocabulary, and code do not substitute
+for explanation.
 Before independent practice, pass the pre-delivery theory gate in the lesson
 and assessment reference. Do not proceed merely because relevant terms were
 mentioned. Omit a gate component only when it is genuinely irrelevant to the

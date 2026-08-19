@@ -47,12 +47,47 @@ their exact form varies by subject:
 9. Mastery check
 10. Review scheduling
 
-Make theory substantial when the learner requests depth. Explain how ideas connect, what assumptions they depend on, when they fail, and why alternative models exist. Break long theoretical development with predictions, derivations, examples, or short checks instead of presenting an uninterrupted lecture.
+Make theory substantial by default in a formal lesson. Explain how ideas
+connect, what assumptions they depend on, when they fail, and why alternative
+models exist. Break long theoretical development with predictions,
+derivations, examples, or short checks instead of presenting an uninterrupted
+lecture.
+
+### Exposition Quality
+
+Treat a concept as major when it introduces a distinct mental model,
+mechanism, causal explanation, interpretive problem, design choice, or family
+of failure modes. Develop every major concept through a subject-appropriate
+exposition arc:
+
+1. motivate the problem, question, or need
+2. build an intuitive account or connection to prior knowledge
+3. state the precise model, mechanism, or interpretation
+4. walk through a representative example, case, derivation, or source
+5. compare a genuine alternative or connect the idea to a larger framework
+6. explain relevant assumptions, tradeoffs, limits, consequences, or failures
+
+Use this as a development standard rather than a rigid six-part heading
+template. A vocabulary entry, bullet, table row, disciplinary label, heading,
+or code sample with a brief caption does not by itself count as developed
+explanation. Prefer coherent paragraphs, step-by-step reasoning, useful
+analogies, and transitions that make clear why one idea leads to the next.
+
+Apply brevity preferences to coordination, exercise instructions, routine
+feedback, and summaries. Do not compress first teaching of a major concept
+into short notes unless the learner explicitly requests a concise treatment.
+Teach in a few substantial conceptual movements and pause at transitions where
+questions or learner reasoning can materially shape what follows.
+
+Visible teaching carries the explanatory burden. A richer lesson artifact may
+preserve and polish what was taught, but artifact-only theory does not count as
+delivered instruction. Do not summarize a detailed chapter in the conversation
+and then claim that the chapter's undeveloped material was taught.
 
 ### Pre-Delivery Theory Gate
 
 Before beginning independent practice on new material, verify that the visible
-teaching and the in-progress durable lesson establish:
+teaching and the in-progress durable lesson establish, for every major concept:
 
 - the central idea, question, abstraction, or problem
 - a governing model, mechanism, causal explanation, or interpretive framework
@@ -134,6 +169,15 @@ segment when possible, then continue into the approved lesson after the repair
 succeeds. If the learner progresses quickly, deepen the explanation, compare an
 alternative, debug a failure, or add transfer instead of ending at the minimum
 check.
+
+Before teaching, name the lesson's major concepts and estimate whether each can
+receive the exposition arc, questions, worked material, and practice it needs.
+If not, split the card into coherent sub-lessons or additional sessions rather
+than compressing the theory. Preserve the approved destination and dependency
+order, update the syllabus and pacing record, and proceed without a separate
+approval when the change is only a non-material pacing adaptation. Ask before
+changes that materially affect duration, scope, depth, destination, or final
+evidence.
 
 Use checkpoints only when the response can change the explanation, support, or
 next task. Avoid interrupting every small conceptual move for evidence

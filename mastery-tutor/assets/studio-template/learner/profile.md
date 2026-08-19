@@ -12,6 +12,9 @@ Last reviewed: `[YYYY-MM-DD]`
   intellectual or design context, subject-appropriate disciplinary lenses,
   meaningful comparisons, interpretations, tradeoffs, and limits rather than
   presenting facts, terminology, or syntax alone.
+- Prefer concise coordination and feedback but substantial, conversational
+  exposition for new theory. Do not compress a formal lesson into short
+  teaching notes, outlines, definitions, or lightly annotated examples.
 
 ## Subject-Specific Preferences
 

@@ -20,11 +20,28 @@ State the coherent capability this lesson develops.
 
 Connect the lesson to a meaningful question, performance, or later demand.
 
+## Major Concept Exposition Map
+
+Name the major concepts before authoring. Treat an idea as major when it brings
+a distinct mental model, mechanism, causal explanation, interpretive problem,
+design choice, or family of failure modes.
+
+- Major concepts:
+- Planned conceptual movements:
+- Split or additional session needed:
+
+For each major concept, develop a motivating problem, intuitive account,
+precise model, worked walkthrough, meaningful connection or alternative, and
+relevant limits or consequences. A vocabulary entry, bullet, table row,
+heading, or code sample with a brief caption does not count as developed
+explanation. Split or extend the lesson when every major concept cannot receive
+this treatment and meaningful practice in the planned session.
+
 ## Pre-Delivery Theory Gate
 
-Complete this authoring gate before beginning independent practice on new
-material. Mark an item not applicable only with a brief, lesson-specific
-reason.
+Complete this authoring gate for every major concept before beginning
+independent practice on new material. Mark an item not applicable only with a
+brief, concept-specific reason.
 
 - [ ] Central idea or problem
 - [ ] Governing model or mechanism
@@ -51,7 +68,9 @@ Define only terms needed for the lesson and connect them to one another.
 
 Present a coherent explanation that can be understood without the original
 conversation. Explain what happens and why, not merely the visible notation or
-steps. Include important assumptions and relationships.
+steps. Include important assumptions and relationships. Use a substantive
+subsection or conceptual movement for every major concept; do not rely on the
+exposition map or gate as the lesson's actual teaching.
 
 ## Connections, Comparisons, And Alternatives
 
