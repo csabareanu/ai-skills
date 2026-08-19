@@ -32,7 +32,7 @@ Do this only in `tracked course` mode.
 
 - For a new course, diagnostic, or curriculum revision, read [course design and state](references/course-design-and-state.md) and [curriculum blueprint](references/curriculum-blueprint.md).
 - For initializing a new tracked learning studio, read [studio bootstrap](references/studio-bootstrap.md) and use `scripts/init_learning_studio.py`.
-- For lesson delivery, exercises, quizzes, labs, discussion, or mastery decisions, read [lesson and assessment](references/lesson-and-assessment.md).
+- For lesson delivery, exercises, quizzes, labs, discussion, or mastery decisions, read [lesson and assessment](references/lesson-and-assessment.md). Re-read it before preparing each formal lesson, even when it was loaded earlier; in a tracked course, also read the current lesson template.
 - For diagrams, interactive explanations, art comparisons, timelines, or simulations, read [visual lessons](references/visual-lessons.md) and reuse `assets/interactive-lesson-template.html` when appropriate.
 - For an `untracked lesson`, use a lightweight version of the same loop and skip studio discovery and state updates.
 
@@ -102,6 +102,10 @@ After any brief retrieval, present substantial theory, a mental model, and a
 worked example in the conversation before independently assessing new material.
 Treat theory as an explanation of ideas, mechanisms, design choices,
 relationships, and consequences—not as a list of definitions or notation.
+Before independent practice, pass the pre-delivery theory gate in the lesson
+and assessment reference. Do not proceed merely because relevant terms were
+mentioned. Omit a gate component only when it is genuinely irrelevant to the
+lesson, and record a brief reason instead of silently skipping it.
 Save each formal lesson as a self-contained reference chapter that preserves
 the final corrected explanation, worked material, important limits, and review
 prompts without requiring the conversation transcript. It must mirror rather

@@ -49,6 +49,30 @@ their exact form varies by subject:
 
 Make theory substantial when the learner requests depth. Explain how ideas connect, what assumptions they depend on, when they fail, and why alternative models exist. Break long theoretical development with predictions, derivations, examples, or short checks instead of presenting an uninterrupted lecture.
 
+### Pre-Delivery Theory Gate
+
+Before beginning independent practice on new material, verify that the visible
+teaching and the in-progress durable lesson establish:
+
+- the central idea, question, abstraction, or problem
+- a governing model, mechanism, causal explanation, or interpretive framework
+- at least one meaningful connection, comparison, or genuine alternative
+- relevant assumptions, tradeoffs, limits, consequences, or failure modes
+- a worked example, demonstration, case, source encounter, or analogous model
+  that connects the explanation to observable use
+
+For programming lessons, also verify that the teaching explains relevant
+design rationale, semantic and compiler or runtime behavior, and a genuine
+alternative or tradeoff. Syntax should appear as an expression of those ideas,
+not as their substitute.
+
+Apply the gate using subject-appropriate forms. Do not impose a word count or
+force decorative history, irrelevant comparisons, or every possible lens into
+the lesson. Mark a component not applicable only when it would not clarify the
+approved lesson outcome, and preserve a brief reason in the lesson artifact.
+Do not declare theory delivered or move to independent practice while a
+relevant component remains absent.
+
 Follow the approved syllabus order. If tooling, accessibility, missing source
 material, or another constraint blocks the next card, explain the available
 choices and wait for the learner before substituting another lesson. Treat an

@@ -20,6 +20,23 @@ State the coherent capability this lesson develops.
 
 Connect the lesson to a meaningful question, performance, or later demand.
 
+## Pre-Delivery Theory Gate
+
+Complete this authoring gate before beginning independent practice on new
+material. Mark an item not applicable only with a brief, lesson-specific
+reason.
+
+- [ ] Central idea or problem
+- [ ] Governing model or mechanism
+- [ ] Meaningful connection, comparison, or alternative
+- [ ] Limits, consequences, or failure modes
+- [ ] Worked example, demonstration, case, or source encounter
+- [ ] For programming lessons: design rationale, semantic and compiler or
+  runtime behavior, and a genuine alternative or tradeoff
+
+Do not begin independent practice until every relevant item is visibly taught
+in the conversation and preserved below.
+
 ## Big Idea And Intellectual Context
 
 Explain the central problem or abstraction and any relevant intellectual,

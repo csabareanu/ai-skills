@@ -91,6 +91,33 @@ class InitLearningStudioTest(unittest.TestCase):
             self.assertEqual(result.returncode, 0, result.stderr)
             self.assertTrue((destination / "learning-studio.yaml").is_file())
 
+    def test_lesson_template_requires_a_pre_delivery_theory_gate(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            destination = Path(temporary_directory) / "studio"
+
+            result = self.run_initializer(str(destination))
+
+            self.assertEqual(result.returncode, 0, result.stderr)
+            lesson_template = (
+                destination / "courses/_template/lessons/_template.md"
+            ).read_text()
+            self.assertIn("## Pre-Delivery Theory Gate", lesson_template)
+            self.assertIn("Central idea or problem", lesson_template)
+            self.assertIn("Governing model or mechanism", lesson_template)
+            self.assertIn(
+                "Meaningful connection, comparison, or alternative",
+                lesson_template,
+            )
+            self.assertIn(
+                "Limits, consequences, or failure modes",
+                lesson_template,
+            )
+            self.assertIn("For programming lessons", lesson_template)
+            self.assertIn(
+                "Do not begin independent practice until",
+                lesson_template,
+            )
+
     def test_refuses_a_non_empty_destination_without_changing_it(self) -> None:
         with tempfile.TemporaryDirectory() as temporary_directory:
             destination = Path(temporary_directory) / "existing"
