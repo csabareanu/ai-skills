@@ -1,8 +1,11 @@
 # AI Interaction Guidelines
 
-> **This blueprint is an overlay layer**, added on top of an already-scaffolded
-> app. Never run a framework scaffolder (create-next-app, etc.) inside this
-> directory. For a new project, scaffold the app first, then overlay these files.
+> **This blueprint is normally an overlay layer** added to a scaffolded app. For
+> a blank greenfield repository, the skills may be linked first so
+> `$start-project` can guide product discovery and stack selection. It is the
+> only Blueprint workflow allowed to run an approved framework scaffolder.
+> Never scaffold inside `blueprint/`, overwrite workflow files, or run a
+> scaffolder without separate explicit approval of the exact command.
 
 ## Communication
 

@@ -1,4 +1,4 @@
 interface:
   display_name: "Project Plan"
-  short_description: "Define a product purpose and scope"
-  default_prompt: "Use $project-plan to interview me and draft the project plan."
+  short_description: "Define product scope and choose a fitting stack"
+  default_prompt: "Use $project-plan to clarify my product, advise me on the stack, and draft the project plan."

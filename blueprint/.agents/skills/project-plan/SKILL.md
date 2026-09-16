@@ -1,18 +1,22 @@
 ---
 name: project-plan
-description: "Create the first user-owned Blueprint project plan for a new project from an idea, brief, or conversation. Run an adaptive, one-question-at-a-time discovery interview, distinguish confirmed decisions from assumptions and open questions, confirm the product understanding, and show a draft for approval before creating or writing blueprint/project-plan.md. Use when the user runs /project-plan, invokes $project-plan, or asks to define a new product direction. For an existing codebase with meaningful shipped behavior, use /adopt instead."
+description: "Create the first user-owned Blueprint project plan for a new or freshly scaffolded project from an idea, brief, or conversation. Run an adaptive product interview and technology-fit consultation, distinguish confirmed decisions from recommendations and open questions, confirm shared understanding, and show a draft for approval before writing blueprint/project-plan.md. Use when the user runs /project-plan, invokes $project-plan, or asks to define a new product direction after setup. For a blank repository that still needs stack selection and scaffolding, use start-project; for meaningful shipped behavior, use adopt."
 ---
 
 # project-plan - define the product direction
 
 ## Where it fits
 
-The new-project path is:
+The already-scaffolded new-project path is:
 
     scaffold -> overlay Blueprint -> /onboard -> /project-plan -> /build-plan -> /overview
 
 `/onboard` tunes the workflow to the repository. Define what the product is
 and why it should exist here. Leave implementation ordering to `/build-plan`.
+
+For a blank repository where the stack is not yet chosen, use `/start-project`
+instead. It performs product discovery and technology selection before
+scaffolding, writes the approved project plan, and then hands off to `/onboard`.
 
 ## Workflow
 
@@ -38,7 +42,7 @@ important implication briefly. Do not lead the user when there is no sound basis
 for a recommendation.
 
 Treat the topics below as coverage prompts, not a questionnaire. Aim for three
-to five discovery questions total. After every answer, re-check the
+to five product discovery questions total. After every answer, re-check the
 definition-of-ready below. Exceed five only when a contradiction or
 `> TODO (blocking)` would otherwise make the draft unsafe, and explain why the
 extra decision is necessary. If the user says the model has enough context or
@@ -57,9 +61,7 @@ Cover only what remains relevant:
 - deployment, operations, or compliance constraints
 
 Challenge vague scope, bundled features, solution-first assumptions, and
-conflicts between answers. If the user wants help choosing a stack or another
-open direction, offer a clearly labeled proposal with a short rationale; do not
-present it as an accepted decision.
+conflicts between answers.
 
 Classify uncertainty consistently:
 
@@ -73,11 +75,36 @@ deployment details may remain open when they do not affect the MVP. Do not ask
 about optional sections one by one merely to make every heading complete; use a
 concise proposal or an open question in the draft instead.
 
-Then present a short "What I think we are building" summary containing the
-problem, primary user, critical journey, MVP, non-goals, and key constraints.
-Ask the user to confirm or correct that understanding before drafting.
+### 3. Run a technology-fit consultation
 
-### 3. Prepare an exact, reviewable draft
+After the product shape is clear, identify technology decisions that materially
+affect the architecture, deployment, or roadmap. Ask only the unresolved
+questions that matter, such as target platform, the user's experience and
+learning goals, delivery speed, data or integration needs, hosting budget, and
+privacy or compliance constraints.
+
+If the user has not already made an informed stack choice, recommend one
+coherent stack with a short rationale tied to the product and constraints. Offer
+one alternative only when it exposes a meaningful tradeoff. Clearly label
+recommendations as proposals, verify unstable compatibility, provider, or
+pricing claims against authoritative sources when they affect the choice, and
+ask the user to accept or adjust the proposal.
+
+Defer low-level libraries and implementation choices that do not affect the
+project plan. Do not recommend technology merely because it is popular or
+appears in a Blueprint example.
+
+Then present a short "What I think we are building" summary containing:
+
+- confirmed problem, primary user, critical journey, MVP, non-goals, and key
+  constraints
+- recommended but not yet accepted technology choices, with their rationale
+- non-blocking open questions
+
+Ask the user to confirm or correct the product understanding and accept or
+adjust each proposed technology choice before drafting.
+
+### 4. Prepare an exact, reviewable draft
 
 After the understanding is confirmed, draft the complete file with this shape:
 
@@ -93,15 +120,17 @@ After the understanding is confirmed, draft the complete file with this shape:
     ## 8. Deployment - Where and how will this ship?
 
 Replace all worksheet prompts and examples with actual plan content. Put success
-signals with the problem or MVP, and put explicit non-goals with the MVP. Keep
-the document concise; use short paragraphs or bullets where they improve
+signals with the problem or MVP, and put explicit non-goals with the MVP. In the
+Tech section, name each accepted technology, its role, and the important reason
+or constraint behind it. Keep recommendations distinct from accepted choices.
+Keep the document concise; use short paragraphs or bullets where they improve
 clarity.
 
 Do not present the plan as ready while a blocking TODO remains. Show the complete
 proposed contents and ask for approval or corrections. Do not create or write
 the file until the user explicitly approves the draft.
 
-### 4. Write and hand off
+### 5. Write and hand off
 
 After approval, create or replace only `blueprint/project-plan.md`. Do not edit
 `blueprint/build-plan.md`, `blueprint/context/project-overview.md`, skills,
@@ -121,5 +150,7 @@ Report:
 - Never overwrite a substantive project plan in this create-only workflow.
 - Do not invent users, features, business rules, or accepted technology and
   deployment choices.
+- Recommend technology only after the product and important constraints are
+  understood.
 - Treat `blueprint/project-plan.md` as user-owned project state.
 - Keep the interview adaptive; stop asking when the definition-of-ready is met.

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Start Project"
+  short_description: "Discover, choose, and scaffold a new project"
+  default_prompt: "Use $start-project to clarify my app idea, recommend a fitting stack, and prepare the approved scaffold."

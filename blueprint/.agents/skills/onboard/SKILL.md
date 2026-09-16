@@ -1,21 +1,22 @@
 ---
 name: onboard
-description: Set up the Blueprint after overlaying it onto a freshly scaffolded or early project. Detects the stack, tunes project files and adapters, documents real commands and existing checks, and leaves optional CI setup as a separate project-specific task. It hands the user off to /project-plan, /build-plan, and then /overview. Use when the user runs /onboard, invokes $onboard, just copied the Blueprint into a new project, or asks what to do after overlaying the Blueprint. For an existing app with meaningful shipped features, use adopt instead.
+description: Set up the Blueprint in a freshly scaffolded or early project. Detect the real stack, compare it with any approved start-project plan, tune project files and adapters, document commands and checks, and leave optional CI setup as a separate project-specific task. Hand off to project-plan when product discovery is missing or to build-plan when start-project already created the plan. Use when the user runs /onboard, invokes $onboard, just scaffolded through start-project, or just overlaid the Blueprint. For meaningful shipped behavior, use adopt instead.
 ---
 
 # onboard - finish the Blueprint overlay setup
 
 Where this sits in the workflow:
 
-    scaffold app  ->  overlay Blueprint  ->  [onboard]  ->  /project-plan  ->  /build-plan  ->  /overview
-    (user/tool)       (copied files)          (tune setup)   (user-owned inputs)       (generated context)
+    /start-project -> scaffold + copy state -> [onboard] -> /build-plan -> /overview
+    or: scaffold -> overlay Blueprint --------^          -> /project-plan when no approved plan exists
 
-`/onboard` is the fresh-project on-ramp. It assumes the app was scaffolded first
-and the Blueprint files were overlaid after. Run it before generating plans or
-running `/overview`. Its job is to make the Blueprint fit the real project before
-planning starts: commands, project title, conventions, ignore rules, and tool
-adapters. It also asks whether the Blueprint workflow files should be committed
-with the repo or kept local-only through `.gitignore`.
+`/onboard` verifies and tunes a fresh project's repository setup after the app
+has been scaffolded. Run it before `/build-plan` or `/overview`. Its job is to
+make the Blueprint fit the real project: commands, project title, conventions,
+ignore rules, and tool adapters. When `/start-project` created an approved plan,
+onboarding also confirms that the generated repository matches the accepted
+stack. It asks whether the Blueprint workflow files should be committed with the
+repo or kept local-only through `.gitignore`.
 
 Use `/adopt` instead when the app is brownfield: real routes, shipped features,
 and project behavior already exist and need to be reflected into the plans.
@@ -38,6 +39,11 @@ Inspect the repository and the two planning docs:
   Continue only with setup files such as `AGENTS.md`, `coding-standards.md`,
   `.gitignore`, and optional notes.
 
+When `project-plan.md` contains substantive content from `/start-project`, read
+its Tech and Deployment sections before surveying the repository. Treat those as
+approved intent to compare with detected reality, not as permission to rewrite
+the plan.
+
 Never run a framework scaffolder. The Blueprint is already overlaid.
 
 ## Step 1 - survey the project facts
@@ -59,6 +65,16 @@ Read only enough to identify the setup:
 
 Do not infer more than the files support. Mark uncertain items as `> TODO` in the
 summary rather than inventing a convention.
+
+Compare the detected framework, runtime, package manager, database, integrations,
+and deployment-relevant configuration with any accepted choices in
+`project-plan.md`:
+
+- Report matches briefly.
+- Surface mismatches and missing scaffold output explicitly.
+- Do not silently change the plan or the repository to reconcile a mismatch.
+- Ask whether the approved plan or the generated repository should be treated as
+  authoritative when the difference affects later work.
 
 ## Step 2 - update project entry files
 
@@ -214,22 +230,25 @@ Stop with a concise onboarding report:
 - TODOs or uncertainties
 - planning-file readiness and whether either file already contains user-owned
   content
-- exact next commands:
-  - `/project-plan` to define the product direction
-  - `/build-plan` to order the approved MVP into build slices
-  - `/overview` to generate the project context after both plans are approved
+- comparison of the detected stack with any accepted Tech and Deployment choices
+- the exact next command:
+  - `/project-plan` when the project plan is absent or still a worksheet
+  - `/build-plan` when `/start-project` already produced an approved project plan
+  - `/overview` only after both plans are substantive and approved
 
-End with the next command:
+End with the applicable next command. For a project without an approved plan:
 
 ```text
 /project-plan
 ```
 
-For Codex, also mention:
+For a project started through `/start-project`:
 
 ```text
-$project-plan
+/build-plan
 ```
+
+For Codex, also mention the equivalent `$project-plan` or `$build-plan` form.
 
 ## Rules
 
@@ -237,6 +256,8 @@ $project-plan
 - Never overwrite real `project-plan.md` or `build-plan.md` content.
 - Never run scaffolders or install dependencies unless the user explicitly asks.
 - Reflect the stack that exists, not the stack the default Blueprint mentions.
+- Surface differences between approved technology intent and the scaffolded
+  repository instead of silently choosing one.
 - Be honest about tests. No `test` command means no required test gate yet.
 - Keep `AGENTS.md` public in local-only mode unless the user explicitly asks for
   a more advanced setup.

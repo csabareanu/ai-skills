@@ -59,7 +59,7 @@ for skill_dir in "$BLUEPRINT_FORK"/.agents/skills/*; do
 done
 ```
 
-This links the 18 curated skills individually. Do not link only each
+This links the 19 curated skills individually. Do not link only each
 `SKILL.md`: some skills also require their `reference/` or `agents/`
 directories.
 
@@ -69,6 +69,13 @@ Keeping it as a real directory allows the project to add its own local skills.
 If a skill name already exists, `ln -sT` fails for that item instead of
 replacing it or nesting another link inside it. Inspect the conflict and decide
 which version the project should use.
+
+For a blank, unscaffolded project, pause here. Launch Codex from
+`$PROJECT_ROOT`, confirm that `$start-project` is available, and run it before
+copying the state templates below. The skill discovers the product, recommends
+a stack, writes the approved `blueprint/project-plan.md`, and scaffolds only
+after separate approval of the exact command. After scaffolding succeeds, return
+to step 2. The no-clobber copy preserves the approved project plan.
 
 ### 2. Copy fresh project state
 
@@ -140,6 +147,13 @@ ln -sT "$BLUEPRINT_FORK/.agents/skills/overview" "$PROJECT_ROOT/.agents/skills/o
 
 Check every skill's handoff before omitting others. For example,
 `$project-plan` hands off to `$build-plan`, which hands off to `$overview`.
+For pre-scaffold discovery, also link `start-project` and its required handoff
+skills:
+
+```bash
+ln -sT "$BLUEPRINT_FORK/.agents/skills/start-project" "$PROJECT_ROOT/.agents/skills/start-project"
+ln -sT "$BLUEPRINT_FORK/.agents/skills/onboard" "$PROJECT_ROOT/.agents/skills/onboard"
+```
 
 ## Portable alternative: copy the skills
 
@@ -166,23 +180,34 @@ This method changes update behavior:
 
 ## Starting a new project
 
-Scaffold the application first, then install the Blueprint links and copied
-state. Run:
+Create the empty project directory, set `PROJECT_ROOT`, and complete step 1 of
+the recommended setup so the repository-local skills are discoverable. Do not
+copy the Blueprint state yet. Then run:
 
-1. `$onboard` — detect the real stack, commands, adapters, and repository
-   visibility choice.
-2. `$project-plan` — establish what the product is through a focused discovery
-   grill and approve the project plan.
-3. `$build-plan` — turn the approved MVP into an ordered, reviewed roadmap.
-4. `$overview` — generate the AI-facing project overview from both plans.
-5. Optionally `$prototype` — explore the interface before feature work.
-6. `$brief`, then `$feature` — clarify and specify the next roadmap item.
-7. `$implement` — build the approved spec in small reviewable steps.
-8. `$check` — verify behavior against the spec.
-9. `$complete` — archive the work and create its work-level commit; merge and
+1. `$start-project` - clarify the problem, users, critical journey, MVP, and
+   non-goals; receive a stack recommendation; confirm the shared understanding;
+   approve the project plan; and separately approve the exact scaffold command.
+2. Return to setup steps 2 through 4 - copy the state templates with
+   no-clobber semantics, create or adapt `AGENTS.md`, and verify discovery. The
+   approved `blueprint/project-plan.md` is preserved.
+3. `$onboard` - detect the real stack and commands, compare them with the
+   approved technology choices, tune conventions and adapters, and choose
+   repository visibility.
+4. `$build-plan` - turn the approved MVP into an ordered, reviewed roadmap.
+5. `$overview` - generate the AI-facing project overview from both plans.
+6. Optionally `$prototype` - explore the interface before feature work.
+7. `$brief`, then `$feature` - clarify and specify the next roadmap item.
+8. `$implement` - build the approved spec in small reviewable steps.
+9. `$check` - verify behavior against the spec.
+10. `$complete` - archive the work and create its work-level commit; merge and
    push remain separate approval decisions.
 
 Use `$status` at any time to inspect progress.
+
+If the application was already scaffolded before Blueprint was installed, skip
+`$start-project`: run `$onboard`, then `$project-plan`, `$build-plan`, and
+`$overview`. `$project-plan` includes the same product and technology-fit
+consultation but never runs a scaffolder.
 
 ## Adopting an existing project
 

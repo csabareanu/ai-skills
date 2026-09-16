@@ -102,6 +102,10 @@ copy:
   build commands, env vars, health checks, or provider constraints, include them
   in a short Deployment section. If deployment is unknown and does not block the
   current roadmap, mark it `> Open question: deployment target`.
+- **Preserve technology intent.** For each accepted stack choice, carry forward
+  its role and any important product, experience, hosting, budget, or operational
+  reason recorded in the project plan. Do not promote a recommendation or open
+  question into an accepted choice.
 - **Stay faithful.** Don't add features, data, or stack choices that aren't in
   the plans. If something is underspecified but non-blocking, leave a clearly
   marked `> Open question: ...` rather than inventing an answer. Stop when the

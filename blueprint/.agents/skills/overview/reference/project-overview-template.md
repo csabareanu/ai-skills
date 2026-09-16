@@ -36,9 +36,11 @@ vague list.
 
 ## Tech stack
 
-The stack from project-plan.md section 5, one line each on what it's for.
+The accepted stack from project-plan.md section 5, one line each on what it is
+for and the important constraint or reason behind the choice. Keep unresolved
+recommendations under Open questions rather than presenting them as selected.
 
-- **<tech>** - role in the project
+- **<tech>** - role in the project; why it fits
 
 ## Monetization
 

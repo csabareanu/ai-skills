@@ -1,6 +1,6 @@
 # AI Skills
 
-A personal collection of 19 Codex skills maintained as reusable, independent
+A personal collection of 20 Codex skills maintained as reusable, independent
 building blocks. Skill behavior lives here; project plans, development history,
 learner progress, and other working state stay in the projects that use them.
 
@@ -8,7 +8,7 @@ learner progress, and other working state stay in the projects that use them.
 
 ### Blueprint workflow
 
-[`blueprint/`](blueprint/) contains 18 skills for planning, implementing,
+[`blueprint/`](blueprint/) contains 19 skills for discovering, planning, implementing,
 checking, and completing software work in small, human-reviewed steps. It is an
 independent Codex-only fork of
 [AI Coding Blueprint](https://ai-blueprint.dev/), deliberately curated without

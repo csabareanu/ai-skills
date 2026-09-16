@@ -7,23 +7,26 @@
 
 ## 1. Problem - What problem are we solving?
 
-Add the problem that this project solves and it's main purpose
+Describe the problem, desired outcome, and how you will recognize success.
 
 ## 2. Users - Who is this for?
 
-What kind of users are you focusing on? eg. new programmers, college students, single people
+Name the primary user and the critical journey they need to complete.
 
 ## 3. Features - What does the MVP need?
 
-High level list of features. One line each, don't go into deep detail
+List the smallest recognizable MVP features, one line each. Include explicit
+non-goals so the first release has a clear boundary.
 
 ## 4. Data - What are we storing?
 
-List of data that will be stored eg. users, products, stats
+List important entities and any ownership, sensitivity, or retention constraints.
 
 ## 5. Tech - What stack are we using?
 
-The stack this project will use eg. Next.js, Neon Postgres, ShadCN UI, Claude Haiku for content generation
+List each accepted technology and its role. Record the important product,
+experience, hosting, budget, or operational reason behind the choice. Keep
+Codex recommendations clearly marked until you accept them.
 
 ## 6. Monetize - How will this make money?
 
