@@ -9,7 +9,9 @@ description: "Start a greenfield Blueprint project before application scaffoldin
 
 The preferred greenfield path is:
 
-    link Blueprint skills -> [start-project] -> scaffold -> copy Blueprint state -> /onboard -> /build-plan -> /overview
+    link Blueprint skills -> [start-project] -> scaffold -> copy Blueprint state
+      -> /onboard -> /build-plan -> /overview
+      -> /prototype (UI projects, optional) -> /feature 1
 
 Use this skill before a framework choice has been locked in. Its job is to make
 the product, MVP boundary, and technology decision explicit before application
@@ -45,9 +47,24 @@ check.
 
 ## Step 1 - discover the product
 
-Ask the highest-value unanswered question one at a time. Include a suggested
-answer when the user's idea provides enough evidence, together with the main
-implication. Do not turn every topic into a mandatory questionnaire.
+Unless the conversation already provides the equivalent context, begin with one
+compact, free-form invitation:
+
+> Before we shape the project, describe the project intent in your own words:
+> what you want to build, who it is for, what the first useful version should
+> accomplish, any technologies you prefer, require, or want to avoid, and any
+> other constraints or details that matter. A partial answer is fine, and you
+> can say when you want a recommendation.
+
+Treat this as an invitation, not a mandatory questionnaire. Accept an incomplete
+or loosely structured answer, preserve technologies as preferences or
+constraints until the technology-fit consultation, and do not ask the opening
+prompt again when the user has already supplied its substance.
+
+After the opening brief, ask the highest-value unanswered question one at a
+time. Include a suggested answer when the user's idea provides enough evidence,
+together with the main implication. Do not turn every topic into a mandatory
+questionnaire.
 
 Establish:
 
@@ -177,11 +194,16 @@ After successful scaffolding, report:
 - that the remaining Blueprint state templates must be copied with no-clobber
   semantics if they are not present yet
 - the next command: `/onboard` (or `$onboard` in Codex)
+- the downstream UI checkpoint: after `/build-plan` and `/overview`, UI projects
+  will be offered `/prototype` before the first feature is specified or built
 
 `/onboard` owns repository setup, real command detection, coding standards,
 ignore rules, adapter decisions, and comparison of the scaffolded stack with the
 approved plan. `/build-plan` follows onboarding because it turns the approved MVP
-into ordered feature slices.
+into ordered feature slices. `/overview` then generates the context that
+`/prototype` uses to propose the theme and key screens. Do not run `/prototype`
+during project start; preview it here so the user knows when the visual decision
+will happen.
 
 ## Rules
 

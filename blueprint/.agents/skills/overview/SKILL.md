@@ -7,10 +7,8 @@ description: "Validate and, when needed, normalize two substantive planning docs
 
 Where this sits in the workflow:
 
-    project-plan.md  +  build-plan.md  ->  [this skill]  ->  project-overview.md  ->  /feature  ->  build
-    (what & why,         (high-level                          (the one doc the         (one spec
-     written by you)      feature list,                        AI reads every           at a time)
-                          written by you)                      session)
+    project-plan.md + build-plan.md -> [this skill] -> project-overview.md
+      -> /prototype (UI projects, optional) -> /feature 1 -> build
 
 You provide two files: `blueprint/project-plan.md` (what & why) and
 `blueprint/build-plan.md` (the ordered feature list), drafted by you or with
@@ -117,10 +115,21 @@ copy:
 Then stop. Report what you wrote and list any contradictions or gaps you found
 between the two plans, so the user can fix the plans and re-run.
 
-In the next-step guidance, keep `/feature` as the main path. If the UI direction
-still feels unsettled, also mention that `/prototype` is available before
-`/feature`: it writes throwaway static HTML/CSS mockups to `prototypes/` and does
-not modify the main app code.
+Before directing the user to the first feature, make prototyping an explicit
+decision gate:
+
+- If the project has a user interface and `prototypes/` does not exist, offer to
+  run `/prototype` (or `$prototype` in Codex) now. Explain briefly that it uses
+  the overview to lock a shared theme and mock the key screens before feature 1
+  is specified or implemented. Ask whether the user wants to prototype or
+  proceed directly to `/feature 1`; do not run it automatically.
+- If `prototypes/` already exists, point to `/feature 1`; the feature skill will
+  use those files as its design reference.
+- If the project is headless, such as an API, CLI, worker, or library, skip the
+  prototype offer and point directly to `/feature 1`.
+
+Prototyping is optional even for UI projects. A user may proceed directly when
+the design is already settled or visual exploration would add little value.
 
 ## Rules
 
